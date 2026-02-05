@@ -1,0 +1,142 @@
+:root{
+  --navy:#071127;
+  --cream:#f6efe3;
+  --teal:#16b6a4;
+  --aqua:#2dd4bf;
+  --text-on-dark:#e6eef6;
+  --text-on-light:#071127;
+  --muted:rgba(230,238,246,0.65);
+  --container:1100px;
+  --radius:14px;
+  --ff:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:var(--ff);
+  background:var(--navy);
+  color:var(--text-on-dark);
+}
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:2rem;
+}
+
+/* Header */
+.site-header{
+  position:sticky;
+  top:0;
+  background:rgba(7,17,39,0.9);
+}
+
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.brand{
+  font-weight:800;
+  color:white;
+  text-decoration:none;
+}
+
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  margin-left:1rem;
+}
+
+/* Hero */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:2rem;
+  align-items:center;
+  min-height:80vh;
+}
+
+.hero h1{
+  font-size:2.5rem;
+  margin-bottom:0.5rem;
+}
+
+.lead{
+  margin-bottom:1rem;
+  color:var(--muted);
+}
+
+/* Avatar */
+.avatar-wrap{
+  background:var(--cream);
+  padding:1rem;
+  border-radius:var(--radius);
+}
+
+.avatar{
+  width:100%;
+  border-radius:10px;
+}
+
+/* Grid + cards */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1rem;
+}
+
+.card{
+  background:var(--cream);
+  color:var(--text-on-light);
+  padding:1rem;
+  border-radius:var(--radius);
+}
+
+/* Skills */
+.chips{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.5rem;
+  margin-top:1rem;
+}
+
+.chips li{
+  background:white;
+  color:var(--text-on-light);
+  padding:0.4rem 0.7rem;
+  border-radius:999px;
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  margin-right:0.5rem;
+  padding:0.6rem 1rem;
+  border-radius:10px;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(90deg,var(--teal),var(--aqua));
+}
+
+.btn.ghost{
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.2);
+}
+
+/* Footer */
+.site-footer{
+  border-top:1px solid rgba(255,255,255,0.05);
+  margin-top:3rem;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
