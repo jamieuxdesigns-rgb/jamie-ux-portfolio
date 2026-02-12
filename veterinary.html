@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Case Study | Veterinary Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* ===== Root & Typography ===== */
+    :root {
+      --accent: #fa8072;
+      --accent-dark: #f77364;
+      --text-dark: #333;
+      --bg-dark: #2f2f2f;
+      --bg-light: #f6f5f2;
+      --bg-gray: #0f172a;
+      --text-light: #fff;
+    }
+    body { font-family: 'Inter', sans-serif; margin:0; padding:0; scroll-behavior:smooth; background:var(--bg-light); color:var(--text-dark);}
+    a{text-decoration:none; color:inherit;}
+    section{padding:80px 24px;}
+    h2.section-title{font-weight:700;margin-bottom:2.5rem;text-align:center;letter-spacing:-0.5px;}
+
+    /* ===== Navbar ===== */
+    .navbar{padding:1rem 0; background:var(--bg-light);}
+    .navbar-brand{font-weight:600; letter-spacing:-0.5px;}
+    .navbar-nav .nav-link{position:relative; transition: color 0.3s ease, text-shadow 0.3s ease;}
+    /* Glow effect for hover and active nav links */
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active{
+      color:var(--accent);
+      text-shadow: 0 0 8px rgba(250,128,114,0.7), 0 0 12px rgba(250,128,114,0.5);
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    /* ===== Hero ===== */
+    .hero{background:var(--bg-dark);color:var(--text-light);text-align:center;padding:6rem 1rem;}
+    .hero h1{font-size:2.5rem;margin-bottom:1rem;}
+    .hero p{font-size:1.2rem;margin-bottom:2rem;}
+    .hero .btn-primary{background-color:var(--accent);color:#fff;border:none;padding:0.9rem 2rem;border-radius:999px;font-weight:600;transition:all 0.3s ease; cursor:pointer;}
+    .hero .btn-primary:hover{background-color:var(--accent-dark);transform:translateY(-2px) scale(1.05);}
+    @media (max-width:768px){.hero h1{font-size:2rem;} .hero p{font-size:1rem;}}
+    @media (max-width:480px){.hero h1{font-size:1.6rem;} .hero p{font-size:0.9rem;}}
+
+    /* ===== Sections ===== */
+    .bg-dark-blue{background:var(--bg-dark); color:var(--text-light);}
+    .bg-white{background:var(--bg-light); color:var(--text-dark);}
+    img{max-width:100%; border-radius:12px; transition:transform 0.3s ease;}
+    img:hover{transform:scale(1.05);}
+
+    /* ===== Screens Grid ===== */
+    .screens-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:24px;}
+    .project-card{background:#fff; padding:20px; border-radius:12px; text-align:center; box-shadow:0 6px 18px rgba(0,0,0,0.1); transition:transform 0.3s, box-shadow 0.3s ease;}
+    .project-card:hover{transform:translateY(-5px); box-shadow:0 0 25px rgba(250,128,114,0.6), 0 10px 25px rgba(250,128,114,0.3);}
+
+    /* ===== Buttons ===== */
+    .btn-outline-dark{display:inline-block;padding:0.9rem 2rem;font-weight:600;border-radius:999px;border:1px solid var(--text-dark);color:var(--text-dark);transition:all 0.3s ease;}
+    .btn-outline-dark:hover{background-color:var(--text-dark); color:var(--text-light); transform:translateY(-2px) scale(1.05);}
+    .btn-primary.glow-btn{box-shadow:0 0 15px rgba(250,128,114,0.6); transition:all 0.3s ease;}
+    .btn-primary.glow-btn:hover{box-shadow:0 0 25px rgba(250,128,114,0.9); transform:translateY(-2px);}
+
+    /* ===== Footer ===== */
+    footer{background:var(--bg-light); color:var(--text-dark); padding:2.5rem 24px; text-align:center; font-size:0.95rem;}
+    footer a{color:var(--text-dark); text-decoration:none; transition: all 0.3s ease;}
+    footer a:hover,
+    footer a.active{color:var(--accent); text-shadow: 0 0 8px rgba(250,128,114,0.7), 0 0 12px rgba(250,128,114,0.5); animation: pulse 1.5s infinite alternate;}
+
+    /* ===== Back to Top ===== */
+    #backToTop{position:fixed;bottom:40px;right:40px;z-index:9999;background:var(--accent);color:#fff;border:none;padding:0.8rem 1rem;border-radius:50%;font-size:1.5rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity 0.4s ease, transform 0.3s ease; box-shadow:0 0 15px rgba(250,128,114,0.6);}
+    #backToTop:hover{background:var(--accent-dark); transform:scale(1.1);}
+
+    /* ===== Fade Up ===== */
+    .fade-up{opacity:0; transform:translateY(30px); transition:opacity 0.4s ease, transform 0.4s ease;}
+    .fade-up.visible{opacity:1; transform:translateY(0);}
+
+    /* ===== Pulse Animation ===== */
+    @keyframes pulse {
+      0%{text-shadow: 0 0 8px rgba(250,128,114,0.7), 0 0 12px rgba(250,128,114,0.5);}
+      100%{text-shadow: 0 0 16px rgba(250,128,114,0.9), 0 0 24px rgba(250,128,114,0.7);}
+    }
+
+    /* ===== Responsive ===== */
+    @media(max-width:768px){.screens-grid{grid-template-columns:1fr; gap:16px;}}
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white border-bottom">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Jamie</a>
+    <ul class="navbar-nav ms-auto d-flex flex-row">
+      <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+      <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+      <li class="nav-item"><a class="nav-link" href="#outcome">Outcome</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero fade-up">
+  <div class="container">
+    <h1>Veterinary Website</h1>
+    <p>Designing a calm, trust-building digital experience for pet owners.</p>
+    <a href="#overview" class="btn btn-primary glow-btn">View Project Details</a>
+  </div>
+</section>
+
+<!-- Overview -->
+<section id="overview" class="bg-white fade-up">
+  <div class="container">
+    <h2 class="section-title">Project Overview</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <p><strong>Role:</strong> UX/UI Designer</p>
+        <p><strong>Timeline:</strong> 3 weeks</p>
+        <p><strong>Tools:</strong> Figma, wireframes, prototyping</p>
+      </div>
+      <div class="col-md-8">
+        <p>This project focused on designing a pet care website that feels welcoming and trustworthy, with intuitive navigation and calming visual design to help pet owners easily access veterinary services and information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process" class="bg-dark-blue fade-up">
+  <div class="container">
+    <h2 class="section-title">Design Process</h2>
+    <h5>1. Wireframes & Sitemap</h5>
+    <p>Created clear navigation and user flows for services, appointments, and resources.</p>
+    <h5>2. Visual Design</h5>
+    <p>Applied calming color palette, readable typography, and consistent branding.</p>
+    <h5>3. Prototyping</h5>
+    <p>Developed clickable Figma prototype to test user navigation and content hierarchy.</p>
+  </div>
+</section>
+
+<!-- Key Screens -->
+<section class="bg-white fade-up">
+  <div class="container">
+    <h2 class="section-title">Key Screens</h2>
+    <div class="screens-grid">
+      <div class="project-card"><img src="images/vet1.jpg" alt="Veterinary home page"></div>
+      <div class="project-card"><img src="images/vet2.jpg" alt="Services page"></div>
+      <div class="project-card"><img src="images/vet3.jpg" alt="Appointment booking page"></div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="https://www.figma.com/proto/your-prototype-link" target="_blank" class="btn btn-primary glow-btn">View Interactive Prototype</a>
+    </div>
+  </div>
+</section>
+
+<!-- Outcome -->
+<section id="outcome" class="bg-dark-blue fade-up">
+  <div class="container">
+    <h2 class="section-title">Outcome & Impact</h2>
+    <ul>
+      <li>Improved clarity and navigation for pet owners.</li>
+      <li>Reduced anxiety through calming colors and visual cues.</li>
+      <li>Created a trustworthy digital presence for veterinary services.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="bg-white fade-up">
+  <div class="container">
+    <h2 class="section-title">Contact Me</h2>
+    <p>Interested in collaborating or learning more? Reach out via email or LinkedIn!</p>
+    <div class="text-center mt-3">
+      <a href="mailto:youremail@example.com" class="btn btn-primary glow-btn">Email Me</a>
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="btn btn-primary glow-btn">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- Back Link -->
+<section class="text-center py-5 bg-light fade-up">
+  <a href="index.html" class="btn btn-outline-dark">← Back to Portfolio</a>
+</section>
+
+<footer>
+  <div class="container">
+    <p class="mb-1">© 2026 Jamie — UX Portfolio</p>
+    <small>
+      <a href="#overview" class="footer-link">Overview</a> | 
+      <a href="#process" class="footer-link">Process</a> | 
+      <a href="#outcome" class="footer-link">Outcome</a> | 
+      <a href="#contact" class="footer-link">Contact</a>
+    </small>
+  </div>
+</footer>
+
+<button id="backToTop" title="Back to Top">&#8679;</button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // ===== Back to Top Button =====
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.style.opacity = window.scrollY > 300 ? '1' : '0';
+    backToTop.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none';
+  });
+  backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  // ===== Fade Up Animation =====
+  const fadeEls = document.querySelectorAll(".fade-up");
+  function checkFade() {
+    const triggerBottom = window.innerHeight * 0.9;
+    fadeEls.forEach((el, i) => {
+      const elTop = el.getBoundingClientRect().top;
+      if(elTop < triggerBottom && !el.classList.contains("visible")) {
+        setTimeout(() => el.classList.add("visible"), i*100);
+      }
+    });
+  }
+  window.addEventListener("scroll", checkFade);
+  window.addEventListener("DOMContentLoaded", checkFade);
+
+  // ===== Smooth Scroll =====
+  const navLinks = document.querySelectorAll(".nav-link");
+  const footerLinks = document.querySelectorAll(".footer-link");
+  const sections = document.querySelectorAll("section");
+  const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+  function smoothScroll(link){
+    const target = document.querySelector(link.getAttribute("href"));
+    if(target){
+      const offsetTop = target.offsetTop - navbarHeight + 10;
+      window.scrollTo({top:offsetTop, behavior:"smooth"});
+    }
+  }
+
+  navLinks.forEach(link => link.addEventListener("click", e=>{e.preventDefault(); smoothScroll(link);}));
+  footerLinks.forEach(link => link.addEventListener("click", e=>{e.preventDefault(); smoothScroll(link);}));
+
+  // ===== Active Link Highlight =====
+  function setActiveLinks(){
+    const scrollPos = window.scrollY + navbarHeight + 50;
+    sections.forEach(section=>{
+      const top = section.offsetTop, bottom = top + section.offsetHeight;
+      navLinks.forEach(link=>link.classList.remove("active"));
+      footerLinks.forEach(link=>link.classList.remove("active"));
+      if(scrollPos >= top && scrollPos < bottom){
+        const navLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
+        const footLink = document.querySelector(`.footer-link[href="#${section.id}"]`);
+        if(navLink) navLink.classList.add("active");
+        if(footLink) footLink.classList.add("active");
+      }
+    });
+  }
+  window.addEventListener("scroll", setActiveLinks);
+  window.addEventListener("DOMContentLoaded", setActiveLinks);
+</script>
+</body>
+</html>

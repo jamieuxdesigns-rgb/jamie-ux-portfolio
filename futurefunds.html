@@ -1,167 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Case Study | FutureFunds</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Case Study | Project</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  :root {
+    --accent: #ff9e9e;
+    --accent-dark: #a8a8a8;
+    --text-dark: #111827;
+    --bg-dark: #1d3557;
+    --bg-light: #ffffff;
+    --bg-gray: #0f172a;
+    --text-light: #fff;
+  }
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  body { font-family: 'Inter', sans-serif; margin:0; padding:0; scroll-behavior:smooth; background:var(--bg-light); color:var(--text-dark);}
+  a { text-decoration:none; color:inherit; }
+  section {padding:80px 24px;}
+  h2.section-title {font-weight:700; margin-bottom:2.5rem; text-align:center; letter-spacing:-0.5px;}
 
-  <style>
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-    .hero { background:#f8f9fa; padding:80px 0; }
-    .section { padding:60px 0; }
-    .section-title { font-weight:700; margin-bottom:20px; }
-    img { max-width:100%; border-radius:12px; }
-  </style>
+  /* ===== Navbar ===== */
+  .navbar { padding:1rem 0; background:var(--bg-light);}
+  .navbar-brand {font-weight:600; letter-spacing:-0.5px;}
+  .navbar-nav {display:flex; gap:1.5rem;}
+  .nav-link {position:relative; transition: color 0.3s ease, text-shadow 0.3s ease;}
+  .nav-link:hover, .nav-link.active {
+    color:var(--accent);
+    text-shadow:0 0 8px rgba(255,158,158,0.7), 0 0 12px rgba(255,158,158,0.5);
+    animation: pulse 1.5s infinite alternate;
+  }
+
+  /* ===== Hero ===== */
+  .hero {background:var(--bg-dark); color:var(--text-light); text-align:center; padding:6rem 1rem;}
+  .hero h1 {font-size:2.5rem; margin-bottom:1rem;}
+  .hero p {font-size:1.2rem; margin-bottom:2rem;}
+  .hero .btn-primary {
+    background-color:var(--accent); color:var(--text-light); border:none;
+    padding:0.9rem 2rem; border-radius:999px; font-weight:600; transition:all 0.3s ease; cursor:pointer;
+  }
+  .hero .btn-primary:hover {background-color:var(--accent-dark); transform:translateY(-2px) scale(1.05);}
+
+  /* ===== Sections ===== */
+  .bg-dark-blue {background:var(--bg-dark); color:var(--text-light);}
+  .bg-white {background:var(--bg-light); color:var(--text-dark);}
+  img {max-width:100%; border-radius:16px; margin-bottom:1.5rem; transition:transform 0.3s ease;}
+  img:hover {transform:scale(1.05);}
+  .screens-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;}
+
+  /* ===== Buttons ===== */
+  .btn-outline-dark {display:inline-block; padding:0.9rem 2rem; font-weight:600; border-radius:999px; border:1px solid var(--text-dark); color:var(--text-dark); transition:all 0.3s ease;}
+  .btn-outline-dark:hover {background-color:var(--text-dark); color:var(--text-light); transform:translateY(-2px) scale(1.05);}
+  .btn-primary.glow-btn {box-shadow:0 0 15px rgba(255,158,158,0.6); transition:all 0.3s ease;}
+  .btn-primary.glow-btn:hover {box-shadow:0 0 25px rgba(255,158,158,0.9); transform:translateY(-2px);}
+
+  /* ===== Footer ===== */
+  footer {background:var(--bg-gray); color:var(--text-light); padding:2.5rem 24px; text-align:center; font-size:0.95rem;}
+  footer a {color:var(--text-light); text-decoration:none; transition: all 0.3s ease;}
+  footer a:hover, footer a.active {
+    color:var(--accent);
+    text-shadow:0 0 8px rgba(255,158,158,0.7), 0 0 12px rgba(255,158,158,0.5);
+    animation: pulse 1.5s infinite alternate;
+  }
+
+  /* ===== Back to Top ===== */
+  #backToTop {
+    position:fixed; bottom:40px; right:40px; z-index:9999; background:var(--accent);
+    color:#fff; border:none; padding:0.8rem 1rem; border-radius:50%; font-size:1.5rem; cursor:pointer;
+    opacity:0; pointer-events:none; transition:opacity 0.4s ease, transform 0.3s ease; box-shadow:0 0 15px rgba(255,158,158,0.6);
+  }
+  #backToTop:hover {background:var(--accent-dark); transform:scale(1.1);}
+
+  /* ===== Fade Up Animation ===== */
+  .fade-up {opacity:0; transform:translateY(30px); transition:opacity 0.4s ease, transform 0.4s ease;}
+  .fade-up.visible {opacity:1; transform:translateY(0);}
+
+  /* ===== Pulse Keyframes ===== */
+  @keyframes pulse {
+    0% {text-shadow:0 0 8px rgba(255,158,158,0.7),0 0 12px rgba(255,158,158,0.5);}
+    100% {text-shadow:0 0 16px rgba(255,158,158,0.9),0 0 24px rgba(255,158,158,0.7);}
+  }
+
+  @media(max-width:768px){.hero h1{font-size:2rem;} .hero p{font-size:1rem;}}
+  @media(max-width:480px){.hero h1{font-size:1.6rem;} .hero p{font-size:0.9rem;}}
+</style>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-white border-bottom">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html">Jamie</a>
+    <ul class="navbar-nav ms-auto d-flex flex-row">
+      <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
+      <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+      <li class="nav-item"><a class="nav-link" href="#outcome">Outcome</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
   </div>
 </nav>
 
-<!-- Hero -->
-<section class="hero text-center">
+<!-- Hero Section -->
+<section class="hero fade-up">
   <div class="container">
-    <h1 class="display-5 fw-bold">FutureFunds Mobile App</h1>
-    <p class="lead">Designing a clear, confidence‑building onboarding experience for first‑time investors.</p>
+    <h1>Project Title</h1>
+    <p>Project subtitle/brief description goes here.</p>
+    <a href="#overview" class="btn btn-primary glow-btn">View Project Details</a>
   </div>
 </section>
 
-<!-- Overview -->
-<section class="section">
+<!-- Example Sections -->
+<section id="overview" class="bg-white fade-up">
   <div class="container">
     <h2 class="section-title">Project Overview</h2>
-    <div class="row">
-      <div class="col-md-4">
-        <p><strong>Role:</strong> UX/UI Designer</p>
-        <p><strong>Timeline:</strong> 4 weeks</p>
-        <p><strong>Tools:</strong> Figma, wireframing, usability testing</p>
-      </div>
-      <div class="col-md-8">
-        <p>
-          <strong>FutureFunds</strong> is a conceptual mobile investing app created to help beginner
-          investors feel confident taking their first steps into personal finance. Many existing
-          financial platforms assume prior knowledge, which creates confusion and anxiety for new
-          users. The goal of this project was to design a guided onboarding experience that
-          simplifies complex financial concepts, reduces cognitive overload, and builds trust from
-          the very first interaction.
-        </p>
-      </div>
-    </div>
+    <p>Overview content...</p>
   </div>
 </section>
 
-<!-- Problem -->
-<section class="section bg-light">
-  <div class="container">
-    <h2 class="section-title">Problem</h2>
-    <p>
-      First‑time investors often abandon financial apps during sign‑up because of unclear
-      terminology, overwhelming choices, and a lack of reassurance about risk and next steps.
-      This drop‑off prevents users from ever reaching the core value of the product.
-    </p>
-
-    <p class="mb-0">
-      <strong>Design Challenge:</strong> How might we create an onboarding experience that feels
-      simple, supportive, and trustworthy for people with little to no investing knowledge?
-    </p>
-  </div>
-</section>
-
-<!-- Research -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Research & Insights</h2>
-
-    <ul>
-      <li>Reviewed onboarding flows from popular investing apps to identify friction points.</li>
-      <li>Noted heavy use of jargon and long multi‑step forms as key abandonment triggers.</li>
-      <li>Identified opportunity for plain language, progress indicators, and reassurance messaging.</li>
-    </ul>
-
-    <p class="mb-0">
-      <strong>Key Insight:</strong> Beginner investors need emotional reassurance just as much as
-      functional clarity.
-    </p>
-  </div>
-</section>
-
-<!-- Process -->
-<section class="section bg-light">
+<section id="process" class="bg-dark-blue fade-up">
   <div class="container">
     <h2 class="section-title">Design Process</h2>
-
-    <h5>1. Low‑Fidelity Wireframes</h5>
-    <p>
-      Sketched a simplified step‑by‑step onboarding flow focused on a single decision per screen,
-      clear progress feedback, and supportive microcopy.
-    </p>
-
-    <h5>2. Visual Design</h5>
-    <p>
-      Designed calming color tones, strong visual hierarchy, and accessible typography to reduce
-      anxiety and improve readability for new users.
-    </p>
-
-    <h5>3. Usability Testing</h5>
-    <p class="mb-0">
-      Conducted informal testing to observe confusion points, refine wording, and streamline the
-      number of required steps.
-    </p>
+    <p>Process content...</p>
   </div>
 </section>
 
-<!-- Screens -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Key Screens</h2>
-    <div class="row g-4">
-      <div class="col-md-4"><img src="images/futurefunds1.jpg" alt="Welcome and onboarding introduction screen"></div>
-      <div class="col-md-4"><img src="images/futurefunds2.jpg" alt="Goal selection and guidance screen"></div>
-      <div class="col-md-4"><img src="images/futurefunds3.jpg" alt="Account setup progress screen"></div>
-    </div>
-  </div>
-</section>
-
-<!-- Outcome -->
-<section class="section bg-light">
+<section id="outcome" class="bg-white fade-up">
   <div class="container">
     <h2 class="section-title">Outcome & Impact</h2>
-
-    <ul>
-      <li>Reduced perceived complexity of investing for beginner users.</li>
-      <li>Created a calmer, more supportive first‑time experience.</li>
-      <li>Improved clarity through plain language and guided steps.</li>
-    </ul>
-
-    <p class="mb-0">
-      This project strengthened my ability to design for <strong>trust, accessibility, and
-      emotional user needs</strong>—critical qualities in financial product design.
-    </p>
+    <p>Outcome content...</p>
   </div>
 </section>
 
-<!-- Reflection -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Reflection</h2>
-    <p class="mb-0">
-      Through this project, I learned how thoughtful onboarding can directly influence user
-      confidence and long‑term engagement. In future iterations, I would expand testing with a
-      broader participant group and explore personalized financial education within the app.
-    </p>
+<section id="contact" class="bg-dark-blue fade-up">
+  <div class="container text-center">
+    <h2 class="section-title">Contact</h2>
+    <a href="mailto:you@example.com" class="btn btn-primary glow-btn">Email Me</a>
   </div>
 </section>
 
-<!-- Back Link -->
-<section class="section text-center">
+<!-- Back to Portfolio -->
+<section class="text-center py-5 bg-light fade-up">
   <a href="index.html" class="btn btn-outline-dark">← Back to Portfolio</a>
 </section>
 
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p class="mb-1">© 2026 Jamie — UX Portfolio</p>
+    <small>
+      <a href="#overview" class="footer-link">Overview</a> | 
+      <a href="#process" class="footer-link">Process</a> | 
+      <a href="#outcome" class="footer-link">Outcome</a> | 
+      <a href="#contact" class="footer-link">Contact</a>
+    </small>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="backToTop" title="Back to Top">&#8679;</button>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // ===== Back to Top Button =====
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    backToTop.style.opacity = window.scrollY > 300 ? '1' : '0';
+    backToTop.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none';
+  });
+  backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  // ===== Fade Up Sections =====
+  const fadeEls = document.querySelectorAll(".fade-up");
+  function checkFade() {
+    const triggerBottom = window.innerHeight * 0.9;
+    fadeEls.forEach((el, i) => {
+      const elTop = el.getBoundingClientRect().top;
+      if(elTop < triggerBottom && !el.classList.contains("visible")){
+        setTimeout(()=> el.classList.add("visible"), i*100);
+      }
+    });
+  }
+  window.addEventListener("scroll", checkFade);
+  window.addEventListener("DOMContentLoaded", checkFade);
+
+  // ===== Smooth Scroll & Active Links =====
+  const navLinks = document.querySelectorAll(".nav-link");
+  const footerLinks = document.querySelectorAll(".footer-link");
+  const sections = document.querySelectorAll("section");
+  const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+  function smoothScroll(link){
+    const target = document.querySelector(link.getAttribute("href"));
+    if(target){
+      const offsetTop = target.offsetTop - navbarHeight + 10;
+      window.scrollTo({top:offsetTop, behavior:"smooth"});
+    }
+  }
+
+  navLinks.forEach(link => link.addEventListener("click", e=>{e.preventDefault(); smoothScroll(link);}));
+  footerLinks.forEach(link => link.addEventListener("click", e=>{e.preventDefault(); smoothScroll(link);}));
+
+  function setActiveLinks(){
+    const scrollPos = window.scrollY + navbarHeight + 50;
+    sections.forEach(section=>{
+      const top = section.offsetTop, bottom = top + section.offsetHeight;
+      navLinks.forEach(link=>link.classList.remove("active"));
+      footerLinks.forEach(link=>link.classList.remove("active"));
+      if(scrollPos >= top && scrollPos < bottom){
+        const navLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
+        const footLink = document.querySelector(`.footer-link[href="#${section.id}"]`);
+        if(navLink) navLink.classList.add("active");
+        if(footLink) footLink.classList.add("active");
+      }
+    });
+  }
+  window.addEventListener("scroll", setActiveLinks);
+  window.addEventListener("DOMContentLoaded", setActiveLinks);
+</script>
 </body>
 </html>
