@@ -100,28 +100,6 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
 .skill-pill { background-color:#fa8072; color:#fff; padding:10px 20px; border-radius:25px; font-weight:500; font-size:16px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .skill-pill:hover { transform:translateY(-2px); box-shadow:0 0 12px rgba(250,128,114,0.6); }
 
-/* Projects */
-.project-list { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-/* Project Card Hover Glow */
-.project-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  width: 300px;
-  text-align: center;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  /* Add glow effect like resume */
-  box-shadow: 0 0 25px rgba(250,128,114,0.6), 0 10px 25px rgba(250,128,114,0.3);
-}
-
-.project-card img { width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:15px; }
-.project-link { color:#fa8072; font-weight:500; text-decoration:none; }
-
 /* Full Portfolio Section */
 .full-portfolio-wrapper { background-color:#2f2f2f; color:#fff; padding:80px 20px; text-align:center; }
 
@@ -300,76 +278,6 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
   transform: translateY(-2px);
 }
 
-/* Project Cards */
-/* Project Cards Light Background */
-#projects .project-card {
-  background-color: #f6f5f2; /* same as Skills / Full Portfolio */
-  color: #0f172a; /* dark text for readability */
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s ease;
-}
-
-#projects .project-card img {
-  border-radius: 10px;
-}
-
-#projects .project-card a.project-link {
-  color: #fa8072;
-  text-decoration: none;
-}
-
-#projects .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 25px rgba(250,128,114,0.6), 0 10px 25px rgba(250,128,114,0.3);
-}
-
-/* Project List Container */
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px; /* increased gap for spacing */
-  justify-content: center; /* keep cards centered */
-}
-
-/* Dark background section */
-.projects-section {
-  background-color: #0f172a;
-  padding: 100px 20px;
-  display: flex;
-  justify-content: center;   /* centers the whole block */
-}
-
-/* Grid container */
-.project-list {
-  display: grid;
-  grid-template-columns: repeat(3, 320px); /* fixed card width */
-  gap: 30px;
-  justify-content: center;   /* centers the cards horizontally */
-  width: 100%;
-  max-width: 1100px;
-  padding-bottom: 40px;      /* space under cards */
-}
-
-/* Individual cards */
-.project-card {
-  background-color: #f6f5f2;
-  border-radius: 16px;
-  padding: 24px;
-  min-height: 320px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* Glow hover effect */
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
-}
-
 
 /* Resume Image */
 .bg-dark-gray .resume-image {
@@ -422,4 +330,228 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
   background-color: #f77364;
   box-shadow: 0 0 25px rgba(250,128,114,0.9);
   transform: translateY(-2px);
+}
+
+/* ===============================
+   PROJECTS SECTION – FINAL FLOAT & GLOW FIX
+   =============================== */
+
+#projects {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f6f5f2; /* light column/section */
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1100px;
+}
+
+/* individual project card */
+.project-card {
+  width: 300px;
+  background-color: #0f172a; /* dark navy card */
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+
+  opacity: 1; /* always visible */
+  transform: translateY(0); /* default position */
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* smooth lift & glow */
+}
+
+/* card hover – lift + glow like resume buttons */
+.project-card:hover {
+  transform: translateY(-8px); /* lifts card */
+  box-shadow:
+    0 12px 20px rgba(0,0,0,0.2),      /* subtle shadow */
+    0 0 25px rgba(250,128,114,0.6);   /* salmon glow like buttons */
+}
+
+/* card image */
+.project-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+/* card title */
+.project-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #f6f5f2; /* white text */
+}
+
+/* card description / preview text */
+.project-card p {
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  color: #e0e0e0; /* bright gray for readability */
+}
+
+/* button – always salmon */
+.project-link {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  background-color: #fa8072; /* salmon */
+  color: #fff;
+
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+
+/* button hover – salmon glow */
+.project-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(250,128,114,0.6);
+}
+
+/* Contact Section Background */
+#contact.section-white {
+  background-color: #0f172a; /* entire section dark background */
+  color: #fff;
+  padding: 80px 20px;
+}
+
+/* Contact Grid */
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* Left Column - Flip Image */
+.contact-left {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Right Column - Form */
+.contact-right {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #0f172a; /* keep dark behind form */
+  border-radius: 12px;
+}
+
+/* Flip container with light background */
+.contact-flip {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  perspective: 1000px;
+  border-radius: 12px;
+  background-color: #f6f5f2; /* light box */
+  overflow: hidden;
+}
+
+/* Inner flip */
+.contact-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.contact-flip:hover .contact-flip-inner {
+  transform: rotateY(180deg) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15),
+              0 0 25px rgba(250,128,114,0.6);
+}
+
+/* Front and back faces */
+.contact-flip-front,
+.contact-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.contact-flip-front img,
+.contact-flip-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* keeps full image visible */
+  display: block;
+}
+
+.contact-flip-back {
+  transform: rotateY(180deg);
+}
+
+/* Form Fields - light boxes */
+.contact-form input,
+.contact-form textarea {
+  background-color: #f6f5f2; /* light input boxes */
+  color: #0f172a; /* dark text inside fields */
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  padding: 14px 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+.contact-form label {
+  color: #fff; /* label visible on dark background */
+}
+
+/* Button styles inside form */
+.contact-form button {
+  background-color: #fa8072;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(250,128,114,0.6);
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  box-shadow: 0 0 25px rgba(250,128,114,0.9);
+  transform: translateY(-2px);
+  background-color: #f77364;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-grid {
+    flex-direction: column;
+  }
+  .contact-flip,
+  .contact-right {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
 }

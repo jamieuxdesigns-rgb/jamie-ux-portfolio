@@ -7,6 +7,7 @@ backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+
 // ===== Contact Form =====
 const form = document.getElementById("contactForm");
 const success = document.getElementById("formSuccess");
@@ -31,11 +32,11 @@ if (form) {
   });
 }
 
-// ===== Fade Up Animation =====
+
+// ===== Fade Up Animation (existing sections) =====
 document.addEventListener("DOMContentLoaded", () => {
   const fadeEls = document.querySelectorAll(".fade-up");
 
-  // Show elements immediately if already in viewport
   fadeEls.forEach(el => {
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight) el.classList.add("visible");
@@ -55,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   checkVisibility();
 });
 
+
 // ===== Smooth Scroll for Nav & Footer Links =====
 const navLinks = document.querySelectorAll(".nav-link");
 const footerLinks = document.querySelectorAll(".footer-link");
@@ -62,20 +64,19 @@ const sections = document.querySelectorAll("section");
 const navbar = document.querySelector(".navbar");
 const navbarHeight = navbar ? navbar.offsetHeight : 0;
 
-// Smooth scroll function (fast)
 function fastScroll(link) {
   const targetID = link.getAttribute("href");
   if (!targetID.startsWith("#")) return;
+
   const target = document.querySelector(targetID);
   if (target) {
-    const offsetTop = target.offsetTop - navbarHeight + 5; // small offset
+    const offsetTop = target.offsetTop - navbarHeight + 5;
     window.requestAnimationFrame(() => {
       window.scrollTo({ top: offsetTop, behavior: "smooth" });
     });
   }
 }
 
-// Attach click events immediately
 [...navLinks, ...footerLinks].forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
@@ -83,13 +84,16 @@ function fastScroll(link) {
   });
 });
 
+
 // ===== Active Nav Link on Scroll =====
 function setActiveNav() {
   const scrollPos = window.scrollY + navbarHeight + 50;
+
   sections.forEach(section => {
     const top = section.offsetTop;
     const bottom = top + section.offsetHeight;
     const navLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
+
     if (scrollPos >= top && scrollPos < bottom) {
       navLinks.forEach(link => link.classList.remove("active"));
       if (navLink) navLink.classList.add("active");
@@ -101,12 +105,15 @@ window.addEventListener("scroll", setActiveNav);
 window.addEventListener("DOMContentLoaded", setActiveNav);
 setActiveNav();
 
+
 // ===== Active Footer Link on Scroll =====
 function setFooterActive() {
   const scrollPos = window.scrollY + navbarHeight + 50;
+
   sections.forEach(section => {
     footerLinks.forEach(link => {
       const target = document.querySelector(link.getAttribute("href"));
+
       if (target) {
         if (scrollPos >= target.offsetTop && scrollPos < target.offsetTop + target.offsetHeight) {
           footerLinks.forEach(l => l.classList.remove("active"));
@@ -120,3 +127,25 @@ function setFooterActive() {
 window.addEventListener("scroll", setFooterActive);
 window.addEventListener("DOMContentLoaded", setFooterActive);
 setFooterActive();
+
+
+// ===================================================
+// ===== NEW: Project Card Scroll-In Animation =====
+// ===================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".project-card");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  cards.forEach(card => observer.observe(card));
+});
