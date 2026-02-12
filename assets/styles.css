@@ -237,31 +237,23 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
 }
 
 /* Hero Section */
-.hero-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 30px;
-  padding: 60px 20px;
-}
-.hero-left img,
-.hero-right img.hero-portrait {
-  width: 100%;
-  max-width: 400px;
-  height: 100%;
+.hero-grid img {
+  width: 100vw;       /* fills available space */
+  max-width: 1200px; /* optional: limit so it doesn’t get absurdly huge on huge screens */
+  height: auto;      /* keeps aspect ratio */
   object-fit: contain;
-  border-radius: 12px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto;    /* center horizontally */
 }
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+
+.hero-buttons {
+  display: flex;           /* arrange buttons in a row */
+  justify-content: center; /* center horizontally */
+  flex-wrap: wrap;         /* wrap to next line on small screens */
+  gap: 15px;               /* space between buttons */
+  margin-top: 30px;        /* space above buttons */
 }
+
 
 /* Buttons inside dark sections */
 .bg-dark-gray .btn-primary,
