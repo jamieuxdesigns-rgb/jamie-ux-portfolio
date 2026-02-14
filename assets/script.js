@@ -149,3 +149,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cards.forEach(card => observer.observe(card));
 });
+
+const resumeVideo = document.querySelector('.resume-image');
+
+if (resumeVideo) {
+  resumeVideo.pause(); // start paused
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          resumeVideo.play().catch(e => console.log(e)); // play only when visible
+          observer.unobserve(entry.target); // stop observing
+        }
+      });
+    },
+    { threshold: 0.5 } // 50% visible
+  );
+
+  observer.observe(resumeVideo);
+}

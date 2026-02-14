@@ -25,8 +25,8 @@
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white border-bottom">
   <div class="container">
     <a class="navbar-brand fw-semibold" href="#">Jamie</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+toggler-icon"></span>
     </button>
     <div id="nav" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
@@ -41,30 +41,43 @@
 </nav>
 
 <!-- Hero Section -->
+<section class="hero">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="images/heroport.mp4" type="video/mp4">
+  </video>
 
-<section class="hero fade-up bg-dark-gray">
-  <div class="hero-grid">
-    <img src="assets/hero.gif" alt="Hero animation">
-  </div>
-  <div class="hero-buttons">
-    <a href="#projects" class="btn btn-primary glow-btn">View Case Studies</a>
-    <a href="https://linkedin.com" target="_blank" class="btn btn-primary glow-btn">LinkedIn</a>
-   <a href="assets/resume.docx" download class="btn btn-primary glow-btn">Download Resume</a>
-      <a href="assets/resume-view.png" target="_blank" class="btn btn-primary glow-btn">View Resume</a>
+  <!-- Overlay Text -->
+  <div class="hero-overlay">
+    <h1>
+      UX & Graphic Designer creating calm, accessible digital experiences people trust.
+    </h1>
+    <p>
+      Specializing in research-driven design, usability testing, and thoughtful interface systems that improve real user outcomes.
+    </p>
+
+    <!-- Buttons inside the overlay -->
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary glow-btn">Portfolio</a>
+      <a href="https://linkedin.com" target="_blank" class="btn btn-primary glow-btn">LinkedIn</a>
+      <a href="images/resume-view.png" target="_blank" class="btn btn-primary glow-btn">Resume</a>
+    </div>
   </div>
 </section>
+
+
+
 
 <!-- About Section -->
 <section id="about" class="fade-up section-white">
   <div class="section-inner">
-    <img src="assets/about.png" alt="About Section" class="section-img">
+    <img src="images/about.png" alt="About Section" class="section-img">
   </div>
 </section>
 
 <!-- Education Section -->
 <section id="education" class="fade-up bg-dark-gray">
   <div class="section-inner">
-    <img src="assets/edu.png" alt="Education Section" class="section-img">
+    <img src="images/edu.png" alt="Education Section" class="section-img">
   </div>
 </section>
 
@@ -88,10 +101,18 @@
   <div class="section-inner text-center">
     <h2 class="section-title">My Resume</h2>
     
-    <!-- Visual Resume -->
-    <a href="assets/resume-image.gif" target="_blank">
-    <img src="assets/resume-image.gif" alt="Visual Resume" class="resume-image">
-    </a>
+    <!-- Resume Video -->
+    <video
+      class="resume-image"
+      muted
+      playsinline
+      autoplay
+      preload="auto"
+      style="cursor:pointer; border-radius:12px; max-width:90%; height:auto; display:block; margin:20px auto;"
+    >
+      <source src="images/resume-image.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
     <!-- Buttons -->
     <div class="resume-buttons">
@@ -100,6 +121,7 @@
     </div>
   </div>
 </section>
+
 
 <!-- Projects Section -->
 <section id="projects">
@@ -192,10 +214,10 @@
   <div class="contact-flip">
     <div class="contact-flip-inner">
       <div class="contact-flip-front">
-        <img src="assets/contact2.gif" alt="Contact illustration" loading="eager">
+        <img src="images/contact2.gif" alt="Contact illustration" loading="eager">
       </div>
           <div class="contact-flip-back">
-        <img src="assets/contact1.gif" alt="Contact info" loading="eager">
+        <img src="images/contact1.gif" alt="Contact info" loading="eager">
       </div>
     </div>
   </div>
