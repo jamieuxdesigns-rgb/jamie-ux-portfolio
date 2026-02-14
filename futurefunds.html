@@ -1,222 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Case Study | Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study | Project Name</title>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <style>
-  :root {
-    --accent: #ff9e9e;
-    --accent-dark: #a8a8a8;
-    --text-dark: #111827;
-    --bg-dark: #1d3557;
-    --bg-light: #ffffff;
-    --bg-gray: #0f172a;
-    --text-light: #fff;
-  }
+:root{
+  --accent:#ff9e9e;
+  --accent-dark:#a8a8a8;
+  --bg-dark:#0f172a;
+  --bg-light:#ffffff;
+  --bg-soft:#f6f5f2;
+  --text-dark:#0f172a;
+  --text-light:#ffffff;
+}
 
-  body { font-family: 'Inter', sans-serif; margin:0; padding:0; scroll-behavior:smooth; background:var(--bg-light); color:var(--text-dark);}
-  a { text-decoration:none; color:inherit; }
-  section {padding:80px 24px;}
-  h2.section-title {font-weight:700; margin-bottom:2.5rem; text-align:center; letter-spacing:-0.5px;}
+/* BASE */
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg-light);
+  color:var(--text-dark);
+  scroll-behavior:smooth;
+}
 
-  /* ===== Navbar ===== */
-  .navbar { padding:1rem 0; background:var(--bg-light);}
-  .navbar-brand {font-weight:600; letter-spacing:-0.5px;}
-  .navbar-nav {display:flex; gap:1.5rem;}
-  .nav-link {position:relative; transition: color 0.3s ease, text-shadow 0.3s ease;}
-  .nav-link:hover, .nav-link.active {
-    color:var(--accent);
-    text-shadow:0 0 8px rgba(255,158,158,0.7), 0 0 12px rgba(255,158,158,0.5);
-    animation: pulse 1.5s infinite alternate;
-  }
+section{padding:90px 24px;}
+h2{font-weight:700;margin-bottom:2rem;text-align:center;}
 
-  /* ===== Hero ===== */
-  .hero {background:var(--bg-dark); color:var(--text-light); text-align:center; padding:6rem 1rem;}
-  .hero h1 {font-size:2.5rem; margin-bottom:1rem;}
-  .hero p {font-size:1.2rem; margin-bottom:2rem;}
-  .hero .btn-primary {
-    background-color:var(--accent); color:var(--text-light); border:none;
-    padding:0.9rem 2rem; border-radius:999px; font-weight:600; transition:all 0.3s ease; cursor:pointer;
-  }
-  .hero .btn-primary:hover {background-color:var(--accent-dark); transform:translateY(-2px) scale(1.05);}
+/* NAVBAR */
+.navbar{background:var(--bg-light);border-bottom:1px solid #eee;}
+.nav-link:hover,.nav-link.active{color:var(--accent);}
 
-  /* ===== Sections ===== */
-  .bg-dark-blue {background:var(--bg-dark); color:var(--text-light);}
-  .bg-white {background:var(--bg-light); color:var(--text-dark);}
-  img {max-width:100%; border-radius:16px; margin-bottom:1.5rem; transition:transform 0.3s ease;}
-  img:hover {transform:scale(1.05);}
-  .screens-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;}
+/* HERO */
+.hero{
+  background:var(--bg-dark);
+  color:var(--text-light);
+  text-align:center;
+  padding:7rem 1rem;
+}
+.hero img{max-width:900px;width:100%;border-radius:18px;margin-top:24px;}
 
-  /* ===== Buttons ===== */
-  .btn-outline-dark {display:inline-block; padding:0.9rem 2rem; font-weight:600; border-radius:999px; border:1px solid var(--text-dark); color:var(--text-dark); transition:all 0.3s ease;}
-  .btn-outline-dark:hover {background-color:var(--text-dark); color:var(--text-light); transform:translateY(-2px) scale(1.05);}
-  .btn-primary.glow-btn {box-shadow:0 0 15px rgba(255,158,158,0.6); transition:all 0.3s ease;}
-  .btn-primary.glow-btn:hover {box-shadow:0 0 25px rgba(255,158,158,0.9); transform:translateY(-2px);}
+/* BUTTON */
+.glow-btn{
+  background:var(--accent);
+  border:none;
+  padding:.9rem 2rem;
+  border-radius:999px;
+  font-weight:600;
+  color:#fff;
+  box-shadow:0 0 15px rgba(255,158,158,.6);
+  transition:.3s;
+}
+.glow-btn:hover{background:var(--accent-dark);transform:translateY(-2px);}
 
-  /* ===== Footer ===== */
-  footer {background:var(--bg-gray); color:var(--text-light); padding:2.5rem 24px; text-align:center; font-size:0.95rem;}
-  footer a {color:var(--text-light); text-decoration:none; transition: all 0.3s ease;}
-  footer a:hover, footer a.active {
-    color:var(--accent);
-    text-shadow:0 0 8px rgba(255,158,158,0.7), 0 0 12px rgba(255,158,158,0.5);
-    animation: pulse 1.5s infinite alternate;
-  }
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+.gallery img{width:100%;border-radius:18px;transition:.3s;}
+.gallery img:hover{transform:scale(1.04);}
 
-  /* ===== Back to Top ===== */
-  #backToTop {
-    position:fixed; bottom:40px; right:40px; z-index:9999; background:var(--accent);
-    color:#fff; border:none; padding:0.8rem 1rem; border-radius:50%; font-size:1.5rem; cursor:pointer;
-    opacity:0; pointer-events:none; transition:opacity 0.4s ease, transform 0.3s ease; box-shadow:0 0 15px rgba(255,158,158,0.6);
-  }
-  #backToTop:hover {background:var(--accent-dark); transform:scale(1.1);}
+/* METRICS */
+.metrics{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:24px;
+  text-align:center;
+}
+.metric-card{
+  background:var(--bg-soft);
+  padding:28px;
+  border-radius:18px;
+}
+.metric-card h3{color:var(--accent);font-size:2rem;}
 
-  /* ===== Fade Up Animation ===== */
-  .fade-up {opacity:0; transform:translateY(30px); transition:opacity 0.4s ease, transform 0.4s ease;}
-  .fade-up.visible {opacity:1; transform:translateY(0);}
+/* FIGMA EMBED */
+iframe{
+  width:100%;
+  height:600px;
+  border:none;
+  border-radius:18px;
+}
 
-  /* ===== Pulse Keyframes ===== */
-  @keyframes pulse {
-    0% {text-shadow:0 0 8px rgba(255,158,158,0.7),0 0 12px rgba(255,158,158,0.5);}
-    100% {text-shadow:0 0 16px rgba(255,158,158,0.9),0 0 24px rgba(255,158,158,0.7);}
-  }
+/* BEFORE/AFTER */
+.compare-container{
+  position:relative;
+  max-width:900px;
+  margin:40px auto;
+}
+.compare-container img{width:100%;display:block;border-radius:18px;}
+.after-img{
+  position:absolute;top:0;left:0;width:50%;overflow:hidden;
+}
+.slider{
+  position:absolute;top:0;left:50%;
+  width:4px;height:100%;
+  background:var(--accent);
+  cursor:ew-resize;
+}
 
-  @media(max-width:768px){.hero h1{font-size:2rem;} .hero p{font-size:1rem;}}
-  @media(max-width:480px){.hero h1{font-size:1.6rem;} .hero p{font-size:0.9rem;}}
+/* FOOTER */
+footer{
+  background:var(--bg-dark);
+  color:var(--text-light);
+  text-align:center;
+  padding:2.5rem;
+}
+footer a{color:var(--text-light);}
+footer a:hover{color:var(--accent);}
+
+/* FADE ANIMATION */
+.fade-up{opacity:0;transform:translateY(30px);transition:.5s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+/* SCROLL PROGRESS BAR */
+#progress{
+  position:fixed;
+  top:0;left:0;
+  height:4px;
+  background:var(--accent);
+  width:0%;
+  z-index:9999;
+}
 </style>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-white border-bottom">
+<div id="progress"></div>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html">Jamie</a>
-    <ul class="navbar-nav ms-auto d-flex flex-row">
-      <li class="nav-item"><a class="nav-link" href="#overview">Overview</a></li>
-      <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
-      <li class="nav-item"><a class="nav-link" href="#outcome">Outcome</a></li>
-      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    <ul class="navbar-nav ms-auto d-flex flex-row gap-4">
+      <li><a class="nav-link" href="#overview">Overview</a></li>
+      <li><a class="nav-link" href="#process">Process</a></li>
+      <li><a class="nav-link" href="#results">Results</a></li>
+      <li><a class="nav-link" href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- Hero Section -->
+<!-- HERO -->
 <section class="hero fade-up">
+  <h1>Project Name</h1>
+  <p>One-sentence UX value proposition.</p>
+  <a href="#overview" class="glow-btn">View Case Study</a>
+  <img src="assets/hero.gif" alt="Project preview">
+</section>
+
+<!-- OVERVIEW -->
+<section id="overview" class="fade-up">
   <div class="container">
-    <h1>Project Title</h1>
-    <p>Project subtitle/brief description goes here.</p>
-    <a href="#overview" class="btn btn-primary glow-btn">View Project Details</a>
+    <h2>Project Overview</h2>
+    <p>Problem, users, constraints, and your role.</p>
   </div>
 </section>
 
-<!-- Example Sections -->
-<section id="overview" class="bg-white fade-up">
+<!-- GALLERY -->
+<section class="bg-soft fade-up">
   <div class="container">
-    <h2 class="section-title">Project Overview</h2>
-    <p>Overview content...</p>
+    <h2>Research & Design</h2>
+    <div class="gallery">
+      <img src="assets/screen1.png">
+      <img src="assets/screen2.png">
+      <img src="assets/screen3.png">
+    </div>
   </div>
 </section>
 
-<section id="process" class="bg-dark-blue fade-up">
+<!-- FIGMA -->
+<section class="fade-up">
   <div class="container">
-    <h2 class="section-title">Design Process</h2>
-    <p>Process content...</p>
+    <h2>Interactive Prototype</h2>
+    <iframe src="https://www.figma.com/embed?embed_host=share"></iframe>
   </div>
 </section>
 
-<section id="outcome" class="bg-white fade-up">
+<!-- BEFORE AFTER -->
+<section class="fade-up">
+  <h2>Before vs After</h2>
+  <div class="compare-container" id="compare">
+    <img src="assets/before.png">
+    <div class="after-img" id="after">
+      <img src="assets/after.png">
+    </div>
+    <div class="slider" id="slider"></div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section id="results" class="bg-soft fade-up">
   <div class="container">
-    <h2 class="section-title">Outcome & Impact</h2>
-    <p>Outcome content...</p>
+    <h2>Results & Impact</h2>
+    <div class="metrics">
+      <div class="metric-card"><h3>+35%</h3><p>Task Success</p></div>
+      <div class="metric-card"><h3>-20%</h3><p>User Errors</p></div>
+      <div class="metric-card"><h3>4.8★</h3><p>Satisfaction</p></div>
+    </div>
   </div>
 </section>
 
-<section id="contact" class="bg-dark-blue fade-up">
-  <div class="container text-center">
-    <h2 class="section-title">Contact</h2>
-    <a href="mailto:you@example.com" class="btn btn-primary glow-btn">Email Me</a>
-  </div>
+<!-- CONTACT -->
+<section id="contact" class="hero fade-up">
+  <h2>Let’s Work Together</h2>
+  <a href="mailto:you@example.com" class="glow-btn">Email Me</a>
 </section>
 
-<!-- Back to Portfolio -->
-<section class="text-center py-5 bg-light fade-up">
-  <a href="index.html" class="btn btn-outline-dark">← Back to Portfolio</a>
-</section>
-
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
-  <div class="container">
-    <p class="mb-1">© 2026 Jamie — UX Portfolio</p>
-    <small>
-      <a href="#overview" class="footer-link">Overview</a> | 
-      <a href="#process" class="footer-link">Process</a> | 
-      <a href="#outcome" class="footer-link">Outcome</a> | 
-      <a href="#contact" class="footer-link">Contact</a>
-    </small>
-  </div>
+  <p>© 2026 Jamie — UX Portfolio</p>
+  <a href="index.html">Back to Portfolio</a>
 </footer>
 
-<!-- Back to Top -->
-<button id="backToTop" title="Back to Top">&#8679;</button>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  // ===== Back to Top Button =====
-  const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    backToTop.style.opacity = window.scrollY > 300 ? '1' : '0';
-    backToTop.style.pointerEvents = window.scrollY > 300 ? 'auto' : 'none';
-  });
-  backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+/* FADE */
+const faders=document.querySelectorAll(".fade-up");
+function show(){const t=window.innerHeight*.9;
+faders.forEach(el=>{if(el.getBoundingClientRect().top<t)el.classList.add("visible");});}
+window.addEventListener("scroll",show);window.addEventListener("DOMContentLoaded",show);
 
-  // ===== Fade Up Sections =====
-  const fadeEls = document.querySelectorAll(".fade-up");
-  function checkFade() {
-    const triggerBottom = window.innerHeight * 0.9;
-    fadeEls.forEach((el, i) => {
-      const elTop = el.getBoundingClientRect().top;
-      if(elTop < triggerBottom && !el.classList.contains("visible")){
-        setTimeout(()=> el.classList.add("visible"), i*100);
-      }
-    });
-  }
-  window.addEventListener("scroll", checkFade);
-  window.addEventListener("DOMContentLoaded", checkFade);
+/* PROGRESS BAR */
+window.addEventListener("scroll",()=>{
+  const win=window.scrollY;
+  const h=document.body.scrollHeight-window.innerHeight;
+  document.getElementById("progress").style.width=(win/h)*100+"%";
+});
 
-  // ===== Smooth Scroll & Active Links =====
-  const navLinks = document.querySelectorAll(".nav-link");
-  const footerLinks = document.querySelectorAll(".footer-link");
-  const sections = document.querySelectorAll("section");
-  const navbarHeight = document.querySelector(".navbar").offsetHeight;
+/* BEFORE/AFTER */
+const slider=document.getElementById("slider");
+const after=document.getElementById("after");
+const container=document.getElementById("compare");
 
-  function smoothScroll(link){
-    const target = document.querySelector(link.getAttribute("href"));
-    if(target){
-      const offsetTop = target.offsetTop - navbarHeight + 10;
-      window.scrollTo({top:offsetTop, behavior:"smooth"});
-    }
-  }
+slider.addEventListener("mousedown",()=>window.addEventListener("mousemove",move));
+window.addEventListener("mouseup",()=>window.removeEventListener("mousemove",move));
 
-  navLinks.forEach(link => link.addEventListener("click", e=>{e.preventDefault(); smoothScroll(link);}));
-  footerLinks.forEach(link => link.addEventListener("click", e=>{e.preventDefault(); smoothScroll(link);}));
-
-  function setActiveLinks(){
-    const scrollPos = window.scrollY + navbarHeight + 50;
-    sections.forEach(section=>{
-      const top = section.offsetTop, bottom = top + section.offsetHeight;
-      navLinks.forEach(link=>link.classList.remove("active"));
-      footerLinks.forEach(link=>link.classList.remove("active"));
-      if(scrollPos >= top && scrollPos < bottom){
-        const navLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
-        const footLink = document.querySelector(`.footer-link[href="#${section.id}"]`);
-        if(navLink) navLink.classList.add("active");
-        if(footLink) footLink.classList.add("active");
-      }
-    });
-  }
-  window.addEventListener("scroll", setActiveLinks);
-  window.addEventListener("DOMContentLoaded", setActiveLinks);
+function move(e){
+  const rect=container.getBoundingClientRect();
+  let x=e.clientX-rect.left;
+  if(x<0)x=0;if(x>rect.width)x=rect.width;
+  after.style.width=x+"px";slider.style.left=x+"px";
+}
 </script>
+
 </body>
 </html>
