@@ -36,10 +36,122 @@
   text-shadow: 0 0 20px rgba(250,128,114,0.9);
 }
 
+.nav-link.pulse-glow.active {
+  animation: pulseGlow 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0%   { text-shadow: 0 0 4px #fa8072, 0 0 8px #fa8072; }
+  50%  { text-shadow: 0 0 8px #fa8072, 0 0 20px #fa8072; }
+  100% { text-shadow: 0 0 4px #fa8072, 0 0 8px #fa8072; }
+}
 
 
 
-body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
+/* ================= HERO SECTION + BUTTONS ================= */
+.hero {
+  display: flex;
+  flex-direction: column;       /* stack video and buttons vertically */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #0f172a;    /* dark background */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero Video */
+.hero-video {
+  width: 100vw;
+  height: auto;
+  max-height: 90vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay Text */
+.hero-overlay {
+  position: absolute;
+  top: 57%;
+  right: 5%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;  /* white text on dark background */
+  max-width: 500px;
+  padding: 0 20px;
+}
+
+/* Hero Overlay Text */
+.hero-overlay h1 {
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem); /* slightly smaller than before */
+  font-weight: 600;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.hero-overlay p {
+  font-size: clamp(0.8rem, 1vw, 0.95rem); /* slightly smaller and more compact */
+  opacity: 0.9;
+  color: #0f172a;
+}
+
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;  /* vertical stack on mobile */
+  align-items: center;
+  gap: 10px;
+  margin-top: 3.5rem;       /* slightly more down */
+}
+
+/* Horizontal on larger screens */
+@media(min-width:768px){
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 3.5rem;     /* match desktop spacing */
+  }
+}
+
+
+
+
+/* Buttons Style */
+.hero-buttons .btn-primary,
+.hero-buttons .glow-btn {
+  background-color: #0f172a;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  box-shadow: 0 0 15px rgba(250,128,114,0.6);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-buttons .btn-primary:hover,
+.hero-buttons .glow-btn:hover {
+  background-color: #0f172a;
+  box-shadow: 0 0 25px #0f172a(250,128,114,0.9);
+  transform: translateY(-2px);
+ 
+ 
+}
+
+
+
+/* Horizontal layout on larger screens */
+@media(min-width:768px){
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: center;  /* ADD THIS LINE */
+  }
+}
+
+
 
 /* Buttons */
 .btn-primary { background-color: #fa8072; color: #fff; border: none; padding: 12px 24px; border-radius: 8px; box-shadow: 0 0 20px rgba(250,128,114,0.3); margin:5px; transition: all 0.3s ease; font-weight:500; }
@@ -47,44 +159,7 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
 .glow-btn { box-shadow:0 0 15px rgba(250,128,114,0.6); }
 .glow-btn:hover { box-shadow:0 0 25px rgba(250,128,114,0.9); transform: translateY(-2px); }
 
-/* Hero Section */
-.hero-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch; /* key: make left & right match height */
-  gap: 30px;
-  padding: 60px 20px;
-}
-.hero-left img,
-.hero-right img.hero-portrait {
-  width: 100%;
-  max-width: 400px;     /* limit width */
-  height: 100%;          /* fill the flex container height */
-  object-fit: contain;   /* maintain aspect ratio */
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto;
-}
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
 
-/* Hero Section Images - Balanced */
-.hero-left img,
-.hero-right img {
-  width: 100%;
-  max-width: 400px;       /* slightly smaller than before */
-  max-height: 450px;      /* constrain GIF height */
-  object-fit: contain;    /* maintain aspect ratio without cropping */
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto;
-}
 
 /* Sections */
 .section-inner { max-width:1200px; margin:0 auto; }
@@ -234,43 +309,6 @@ body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
 .bg-dark-gray {
   background-color: #0f172a;
   color: #ffffff; /* white text for readability */
-}
-/* Hero Section */
-.hero {
-  display: flex;
-  flex-direction: column;   /* stack GIF and buttons vertically */
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 4rem 2rem;
-  width: 100%;
-  background-color: #0f172a;
-}
-
-/* Hero Section */
-.hero-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch; /* key: make left & right match height */
-  gap: 30px;
-  padding: 60px 20px;
-}
-
-/* Buttons directly under the GIF */
-.hero-buttons {
-  display: flex;
-  flex-direction: column; /* stack vertically on mobile by default */
-  align-items: center;
-  gap: 15px;              /* spacing between buttons */
-  margin-top: 2rem;       /* space below GIF */
-}
-
-/* Optional: make buttons horizontal on larger screens */
-@media (min-width: 768px) {
-  .hero-buttons {
-    flex-direction: row;
-  }
 }
 
 /* Buttons styling inside dark sections */
