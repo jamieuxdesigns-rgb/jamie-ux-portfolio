@@ -83,27 +83,27 @@
   padding: 0 20px;
 }
 
+/* Hero Overlay Text */
 .hero-overlay h1 {
-  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem); /* slightly smaller than before */
   font-weight: 600;
   line-height: 1.2;
   color: #0f172a;
 }
 
 .hero-overlay p {
-  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-size: clamp(0.8rem, 1vw, 0.95rem); /* slightly smaller and more compact */
   opacity: 0.9;
   color: #0f172a;
 }
 
 
-/* Hero Buttons (inside overlay) */
 .hero-buttons {
   display: flex;
   flex-direction: column;  /* vertical stack on mobile */
   align-items: center;
   gap: 10px;
-  margin-top: 0.5rem;      /* space below <p> */
+  margin-top: 3.5rem;       /* slightly more down */
 }
 
 /* Horizontal on larger screens */
@@ -111,9 +111,12 @@
   .hero-buttons {
     flex-direction: row;
     justify-content: center;
-     margin-top: 0.5rem;
+    margin-top: 3.5rem;     /* match desktop spacing */
   }
 }
+
+
+
 
 /* Buttons Style */
 .hero-buttons .btn-primary,
