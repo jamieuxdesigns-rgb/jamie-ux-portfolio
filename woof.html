@@ -87,21 +87,39 @@ iframe{
   border-radius:18px;
 }
 
-/* BEFORE/AFTER */
-.compare-container{
-  position:relative;
-  max-width:900px;
-  margin:40px auto;
+/* WIREFRAME VS FINAL GALLERY */
+.compare-galleries {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; /* stack on small screens */
+  justify-content: center;
 }
-.compare-container img{width:100%;display:block;border-radius:18px;}
-.after-img{
-  position:absolute;top:0;left:0;width:50%;overflow:hidden;
+
+.gallery-column {
+  flex: 1 1 400px; /* min width 400px per column */
 }
-.slider{
-  position:absolute;top:0;left:50%;
-  width:4px;height:100%;
-  background:var(--accent);
-  cursor:ew-resize;
+
+.gallery-column h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.gallery-column .gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.gallery-column img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.gallery-column img:hover {
+  transform: scale(1.03);
 }
 
 /* FOOTER */
@@ -127,6 +145,19 @@ footer a:hover{color:var(--accent);}
   width:0%;
   z-index:9999;
 }
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
 </style>
 </head>
 
@@ -147,7 +178,6 @@ footer a:hover{color:var(--accent);}
   </div>
 </nav>
 
-
 <!-- HERO -->
 <section class="hero fade-up" style="padding-top:0; padding-bottom:4rem; text-align:center;">
   <video src="images/herowoof.mp4" autoplay muted playsinline loop
@@ -158,9 +188,6 @@ footer a:hover{color:var(--accent);}
   <p style="margin-bottom:1rem;">Redesigning a dog camp website to improve booking, showcase services, and highlight fun activities for pet owners.</p>
   <a href="#overview" class="glow-btn">View Interactive Prototype</a>
 </section>
-
-
-
 
 <!-- OVERVIEW -->
 <section id="overview" class="fade-up">
@@ -186,19 +213,47 @@ footer a:hover{color:var(--accent);}
 <section class="fade-up">
   <div class="container">
     <h2>Interactive Prototype</h2>
-    <iframe src="https://www.figma.com/embed?embed_host=share"></iframe>
+    <iframe src="https://jamieuxdesigns-rgb.github.io/Campwoofandwiggles/"></iframe>
   </div>
 </section>
 
-<!-- BEFORE AFTER -->
+<!-- WIREFRAME VS FINAL UI -->
 <section class="fade-up">
-  <h2>Before vs After</h2>
-  <div class="compare-container" id="Old FutureFunds dashboard">
-    <img src="assets/before.png">
-    <div class="after-img" id="Redesigned FutureFunds dashboard">
-      <img src="assets/after.png">
+  <div class="container">
+    <h2>Wireframe vs Final UI</h2>
+    <div class="compare-galleries">
+
+      <!-- BEFORE GALLERY -->
+      <div class="gallery-column">
+        <h3>Before</h3>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="images/woofmobilemock.png" alt="Mobile Mockup">
+            <p class="caption">Mobile View</p>
+          </div>
+          <div class="gallery-item">
+            <img src="images/woofwebmock.png" alt="Web Mockup">
+            <p class="caption">Web View</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFTER GALLERY -->
+      <div class="gallery-column">
+        <h3>After</h3>
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="images/woofafter.png" alt="Finished Design">
+            <p class="caption">Mobile & Tablet</p>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/after2.png" alt="Finished Design Additional">
+            <p class="caption">Desktop View</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="slider" id="slider"></div>
   </div>
 </section>
 
@@ -239,21 +294,6 @@ window.addEventListener("scroll",()=>{
   const h=document.body.scrollHeight-window.innerHeight;
   document.getElementById("progress").style.width=(win/h)*100+"%";
 });
-
-/* BEFORE/AFTER */
-const slider=document.getElementById("slider");
-const after=document.getElementById("after");
-const container=document.getElementById("compare");
-
-slider.addEventListener("mousedown",()=>window.addEventListener("mousemove",move));
-window.addEventListener("mouseup",()=>window.removeEventListener("mousemove",move));
-
-function move(e){
-  const rect=container.getBoundingClientRect();
-  let x=e.clientX-rect.left;
-  if(x<0)x=0;if(x>rect.width)x=rect.width;
-  after.style.width=x+"px";slider.style.left=x+"px";
-}
 </script>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Study | Future Funds App</title>
+<title>Case Study | Purrfectly Peppy Veterinary</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -83,25 +83,38 @@ h2{font-weight:700;margin-bottom:2rem;text-align:center;}
 iframe{
   width:100%;
   height:600px;
-  border:none;
+  border:1px solid rgba(0,0,0,0.1);
   border-radius:18px;
 }
 
-/* BEFORE/AFTER */
-.compare-container{
-  position:relative;
-  max-width:900px;
-  margin:40px auto;
+/* SIDE-BY-SIDE GALLERIES */
+.compare-galleries {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.compare-container img{width:100%;display:block;border-radius:18px;}
-.after-img{
-  position:absolute;top:0;left:0;width:50%;overflow:hidden;
+.gallery-column {
+  flex: 1 1 400px;
 }
-.slider{
-  position:absolute;top:0;left:50%;
-  width:4px;height:100%;
-  background:var(--accent);
-  cursor:ew-resize;
+.gallery-column h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+.gallery-column .gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.gallery-column img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.gallery-column img:hover {
+  transform: scale(1.03);
 }
 
 /* FOOTER */
@@ -127,6 +140,45 @@ footer a:hover{color:var(--accent);}
   width:0%;
   z-index:9999;
 }
+
+/* UX PROCESS TIMELINE */
+.process-timeline{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:28px;
+  margin-top:2rem;
+  text-align:center;
+}
+
+.process-step{
+  background:#ffffff;
+  padding:26px;
+  border-radius:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  transition:transform .25s, box-shadow .25s;
+}
+
+.process-step:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 26px rgba(0,0,0,0.12);
+}
+
+.process-icon{
+  font-size:2rem;
+  margin-bottom:12px;
+}
+
+.process-step h3{
+  font-size:1.2rem;
+  margin-bottom:8px;
+  color:var(--accent);
+}
+
+.process-step p{
+  font-size:.95rem;
+  line-height:1.5;
+}
+
 </style>
 </head>
 
@@ -147,37 +199,150 @@ footer a:hover{color:var(--accent);}
   </div>
 </nav>
 
-
 <!-- HERO -->
 <section class="hero fade-up" style="padding-top:0; padding-bottom:4rem; text-align:center;">
   <video src="images/heropep.mp4" autoplay muted playsinline loop
          style="width:100%; max-width:1500px; border-radius:15px; display:block; margin:0 auto;">
   </video>
 
-  <h1 style="margin-top:1rem; margin-bottom:0.5rem;">Future Funds App</h1>
-  <p style="margin-bottom:1rem;">Redesigning a financial platform to make investment tracking simple and intuitive for everyday users.</p>
-  <a href="#overview" class="glow-btn">View Interactive Prototype</a>
+  <h1 style="margin-top:1rem; margin-bottom:0.5rem;">Purrfectly Peppey Veterinary</h1>
+
+  <p style="max-width:720px; margin:0 auto 1.2rem;">
+    A user-centered website redesign for a veterinary clinic focused on
+    simplifying appointment scheduling, improving content clarity,
+    and creating a warm, trustworthy digital experience for pet owners.
+  </p>
+
+  <a href="#overview" class="glow-btn">View Case Study</a>
 </section>
-
-
-
 
 <!-- OVERVIEW -->
 <section id="overview" class="fade-up">
-  <div class="container">
+  <div class="container" style="max-width:800px;">
     <h2>Project Overview</h2>
-    <p>FutureFunds was struggling with low user engagement due to a cluttered dashboard and confusing navigation. Target users were millennials and Gen Z investors who needed quick, clear insights on their portfolios. With a 3-week sprint and limited development resources, I led the redesign process, creating wireframes, high-fidelity mockups, and an interactive prototype to improve usability and engagement.</p>
+
+    <p>
+      This conceptual UX/UI redesign reimagines the online experience for a
+      local veterinary clinic. The goal was to reduce friction in appointment
+      scheduling, organize service information more clearly, and establish a
+      friendly visual tone that builds trust with pet owners.
+    </p>
+
+    <p>
+      Using a user-centered design process, the project moved from research and
+      structure planning to wireframing, high-fidelity prototyping, and
+      responsive layout refinement. The final solution demonstrates how
+      thoughtful interaction design and clear information hierarchy can
+      meaningfully improve usability in healthcare-adjacent digital spaces.
+    </p>
   </div>
 </section>
+
+<!-- PROBLEM SOLUTION OUTCOME -->
+<section class="fade-up">
+  <div class="container" style="max-width:900px;">
+    <h2>Design Approach</h2>
+
+    <div class="row g-4 mt-2">
+
+      <!-- PROBLEM -->
+      <div class="col-md-4">
+        <div class="metric-card h-100">
+          <h3 style="font-size:1.4rem;">Problem</h3>
+          <p>
+            The original veterinary website lacked clear navigation,
+            made appointment booking difficult to find, and presented
+            dense service information that created friction for pet owners
+            seeking quick answers.
+          </p>
+        </div>
+      </div>
+
+      <!-- SOLUTION -->
+      <div class="col-md-4">
+        <div class="metric-card h-100">
+          <h3 style="font-size:1.4rem;">Solution</h3>
+          <p>
+            A user-centered redesign introduced simplified navigation,
+            a prominent scheduling flow, improved content hierarchy,
+            and a warm visual style to create a more approachable and
+            intuitive digital experience.
+          </p>
+        </div>
+      </div>
+
+      <!-- OUTCOME -->
+      <div class="col-md-4">
+        <div class="metric-card h-100">
+          <h3 style="font-size:1.4rem;">Outcome</h3>
+          <p>
+            The final prototype demonstrates clearer task completion,
+            stronger visual trust signals, and a responsive layout that
+            supports real-world usability for modern veterinary clients.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- UX PROCESS -->
+<section class="bg-soft fade-up">
+  <div class="container" style="max-width:1000px;">
+    <h2>UX Process</h2>
+
+    <div class="process-timeline">
+
+      <div class="process-step">
+        <div class="process-icon">🔍</div>
+        <h3>Research</h3>
+        <p>
+          Reviewed user needs, evaluated the original site structure,
+          and identified friction points in navigation and appointment booking.
+        </p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-icon">✏️</div>
+        <h3>Wireframing</h3>
+        <p>
+          Created low-fidelity layouts to organize content hierarchy,
+          simplify navigation, and prioritize scheduling actions.
+        </p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-icon">🧩</div>
+        <h3>Prototyping</h3>
+        <p>
+          Designed responsive high-fidelity screens in Figma with
+          accessible typography, warm visuals, and clear user flows.
+        </p>
+      </div>
+
+      <div class="process-step">
+        <div class="process-icon">✅</div>
+        <h3>Evaluation</h3>
+        <p>
+          Reviewed usability and clarity of core tasks to ensure the
+          redesigned experience supports real-world veterinary clients.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- GALLERY -->
 <section class="bg-soft fade-up">
   <div class="container">
     <h2>Research & Design</h2>
     <div class="gallery">
-      <img src="assets/screen1.png" alt="Dashboard Mockup">
-      <img src="assets/screen2.png" alt="Brand Style Guide">
-      <img src="assets/screen3.png" alt="Mobile Mockup">
+      <img src="images/screen1.png" alt="Dashboard Mockup">
+      <img src="images/screen2.png" alt="Brand Style Guide">
+      <img src="images/screen3.png" alt="Mobile Mockup">
     </div>
   </div>
 </section>
@@ -186,33 +351,119 @@ footer a:hover{color:var(--accent);}
 <section class="fade-up">
   <div class="container">
     <h2>Interactive Prototype</h2>
-    <iframe src="https://www.figma.com/embed?embed_host=share"></iframe>
+    <iframe
+      src="https://embed.figma.com/proto/gxizJouXkWeH8g5H2KZ9o6/Project-Two?scaling=contain&content-scaling=fixed&page-id=0%3A1&node-id=4-81&starting-point-node-id=4%3A67&embed-host=share"
+      allowfullscreen>
+    </iframe>
   </div>
 </section>
 
-<!-- BEFORE AFTER -->
+<!-- BEFORE / AFTER GALLERIES -->
 <section class="fade-up">
-  <h2>Before vs After</h2>
-  <div class="compare-container" id="Old FutureFunds dashboard">
-    <img src="assets/before.png">
-    <div class="after-img" id="Redesigned FutureFunds dashboard">
-      <img src="assets/after.png">
+  <div class="container">
+    <h2>Before vs After</h2>
+    <div class="compare-galleries">
+
+      <!-- BEFORE -->
+      <div class="gallery-column">
+        <h3>Before</h3>
+        <div class="gallery">
+          <img src="assets/before.png" alt="Old Website">
+          <img src="assets/before2.png" alt="Old Website Additional">
+        </div>
+      </div>
+
+      <!-- AFTER -->
+      <div class="gallery-column">
+        <h3>After</h3>
+        <div class="gallery">
+          <img src="assets/after.png" alt="Redesigned Website">
+          <img src="assets/after2.png" alt="Redesigned Website Additional">
+        </div>
+      </div>
+
     </div>
-    <div class="slider" id="slider"></div>
   </div>
 </section>
 
 <!-- METRICS -->
+
 <section id="results" class="bg-soft fade-up">
   <div class="container">
     <h2>Results & Impact</h2>
+
     <div class="metrics">
-      <div class="metric-card"><h3>+35%</h3><p>Task Success</p></div>
-      <div class="metric-card"><h3>-20%</h3><p>User Errors</p></div>
-      <div class="metric-card"><h3>4.8★</h3><p>Satisfaction</p></div>
+
+      <div class="metric-card">
+        <h3>Simplified</h3>
+        <p>
+          Reduced cognitive load by clarifying navigation structure
+          and organizing key information for quicker understanding.
+        </p>
+      </div>
+
+      <div class="metric-card">
+        <h3>Improved Flow</h3>
+        <p>
+          Streamlined the appointment scheduling experience to support
+          faster task completion and a more intuitive user journey.
+        </p>
+      </div>
+
+      <div class="metric-card">
+        <h3>Full UX Process</h3>
+        <p>
+          Demonstrated an end-to-end user-centered workflow including
+          research, wireframing, prototyping, and responsive refinement.
+        </p>
+      </div>
+
     </div>
   </div>
 </section>
+
+<!-- KEY TAKEAWAYS -->
+<section class="fade-up">
+  <div class="container" style="max-width:900px;">
+    <h2>Key Takeaways</h2>
+
+    <div class="row g-4 mt-2">
+
+      <div class="col-md-4">
+        <div class="metric-card h-100">
+          <h3 style="font-size:1.2rem;">User-First Thinking</h3>
+          <p>
+            Prioritizing clear navigation and accessible scheduling
+            significantly improves usability for real-world clients.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="metric-card h-100">
+          <h3 style="font-size:1.2rem;">Visual Trust Matters</h3>
+          <p>
+            Warm imagery, clean typography, and thoughtful spacing
+            help veterinary services feel approachable and reliable.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="metric-card h-100">
+          <h3 style="font-size:1.2rem;">Process Drives Results</h3>
+          <p>
+            Structured UX steps—from research to prototype—create
+            meaningful improvements beyond surface-level design.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
 <!-- CONTACT -->
 <section id="contact" class="hero fade-up">
@@ -231,7 +482,8 @@ footer a:hover{color:var(--accent);}
 const faders=document.querySelectorAll(".fade-up");
 function show(){const t=window.innerHeight*.9;
 faders.forEach(el=>{if(el.getBoundingClientRect().top<t)el.classList.add("visible");});}
-window.addEventListener("scroll",show);window.addEventListener("DOMContentLoaded",show);
+window.addEventListener("scroll",show);
+window.addEventListener("DOMContentLoaded",show);
 
 /* PROGRESS BAR */
 window.addEventListener("scroll",()=>{
@@ -239,21 +491,6 @@ window.addEventListener("scroll",()=>{
   const h=document.body.scrollHeight-window.innerHeight;
   document.getElementById("progress").style.width=(win/h)*100+"%";
 });
-
-/* BEFORE/AFTER */
-const slider=document.getElementById("slider");
-const after=document.getElementById("after");
-const container=document.getElementById("compare");
-
-slider.addEventListener("mousedown",()=>window.addEventListener("mousemove",move));
-window.addEventListener("mouseup",()=>window.removeEventListener("mousemove",move));
-
-function move(e){
-  const rect=container.getBoundingClientRect();
-  let x=e.clientX-rect.left;
-  if(x<0)x=0;if(x>rect.width)x=rect.width;
-  after.style.width=x+"px";slider.style.left=x+"px";
-}
 </script>
 
 </body>
