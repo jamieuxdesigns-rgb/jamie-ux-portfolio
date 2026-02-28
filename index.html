@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jamie | UX Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/index.css">
+  
+  <!-- Fancybox CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+</head>
+<body>
+
+<!-- Scroll Progress Bar -->
+<div id="scrollProgressContainer">
+  <div id="scrollProgress"></div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white border-bottom">
+  <div class="container">
+    <img src="images/logo.png" alt="Jamie Logo" class="nav-logo">
+    <a class="navbar-brand fw-semibold" href="#">Jamie.UXDesigns</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link pulse-glow" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link pulse-glow" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link pulse-glow" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link pulse-glow" href="#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link pulse-glow" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero-wrapper">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="images/heroindex.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>UX & Graphic Designer creating calm, accessible digital experiences people trust.</h1>
+      <p>Designing calm, research-driven digital experiences...</p>
+    </div>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary glow-btn">Portfolio</a>
+      <a href="https://linkedin.com" target="_blank" class="btn btn-primary glow-btn">LinkedIn</a>
+      <a href="images/resume-view.png" target="_blank" class="btn btn-primary glow-btn">Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- About Me -->
+<section id="about" class="fade-up section-white">
+  <div class="section-inner">
+    <video class="lazy-video" muted playsinline loop data-src="images/aboutme.mp4"></video>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="fade-up bg-dark-gray">
+  <div class="section-inner">
+    <video class="lazy-video" muted playsinline loop data-src="images/edu.mp4"></video>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="fade-up section-dark">
+  <div class="section-inner">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-container">
+      <span class="skill-pill">UX Research</span>
+      <span class="skill-pill">Wireframing</span>
+      <span class="skill-pill">Prototyping</span>
+      <span class="skill-pill">Figma</span>
+      <span class="skill-pill">Accessibility</span>
+      <span class="skill-pill">Usability Testing</span>
+    </div>
+  </div>
+</section>
+
+<!-- Resume -->
+<section id="resume" class="fade-up">
+  <div class="section-inner text-center">
+    <h2 class="section-title">My Resume</h2>
+
+    <video class="resume-image lazy-video" muted playsinline loop data-src="images/resume-image.mp4" style="cursor:pointer; border-radius:12px; max-width:90%; height:auto; display:block; margin:20px auto;"></video>
+
+    <div class="resume-buttons">
+      <a href="images/resume-download.pdf" download class="btn btn-primary glow-btn">Download PDF File</a>
+      <a href="images/resume-view.png" target="_blank" class="btn btn-primary glow-btn">View Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="fade-up">
+  <h2>Website, App, and UI Design Projects</h2>
+  <div class="projects-container">
+    <div class="project-list">
+
+      <div class="project-card">
+        <video class="lazy-video" muted playsinline loop data-src="images/Vet.mp4"></video>
+        <h3>Veterinary Website</h3>
+        <p>Designing a calm, trust-building digital experience for pet owners.</p>
+        <a href="veterinary.html" class="project-link">View Case Study →</a>
+      </div>
+
+      <div class="project-card">
+        <video class="lazy-video" muted playsinline loop data-src="images/Money.mp4"></video>
+        <h3>FutureFunds Mobile App</h3>
+        <p>Creating a clear, confidence-building onboarding experience for first-time investors.</p>
+        <a href="futurefunds.html" class="project-link">View Case Study →</a>
+      </div>
+
+      <div class="project-card">
+        <video class="lazy-video" muted playsinline loop data-src="images/Train.mp4"></video>
+        <h3>Horizon Railways Tickets</h3>
+        <p>Improving readability and clarity for travelers in fast-moving environments.</p>
+        <a href="horizon.html" class="project-link">View Case Study →</a>
+      </div>
+
+      <div class="project-card">
+        <video class="lazy-video" muted playsinline loop data-src="images/Camp.mp4"></video>
+        <h3>Woof and Wiggles Day Camp</h3>
+        <p>Redesigning a dog camp website to improve booking and showcase services.</p>
+        <a href="woof.html" class="project-link">View Case Study →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- At A Glance -->
+<section id="at-a-glance" class="fade-up">
+  <div class="section-inner">
+    <h2>Graphic Design Projects At a Glance</h2>
+    <p class="glance-subtitle">A curated snapshot of selected visual and interaction work.</p>
+
+    <div class="glance-grid">
+
+      <div class="glance-item project-card project" data-fancybox="alteredstate">
+        <video class="lazy-video" muted playsinline loop data-src="images/glance1.mp4"></video>
+        <h3>Altered State</h3>
+        <p>A snapshot of the book jacket redesign with full color and typography details.</p>
+        <a href="portfolio.html" class="project-link">View Project →</a>
+      </div>
+
+      <div class="glance-item project-card project" data-fancybox="piddlepaddle">
+        <video class="lazy-video" muted playsinline loop data-src="images/glance4.mp4"></video>
+        <h3>Piddle Paddle</h3>
+        <p>Branding and layout design for a fun, interactive tour experience.</p>
+        <a href="portfolio.html" class="project-link">View Project →</a>
+      </div>
+
+      <div class="glance-item project-card project" data-fancybox="localsustainablefresh">
+        <video class="lazy-video" muted playsinline loop data-src="images/glance3.mp4"></video>
+        <h3>Local Sustainable Fresh</h3>
+        <p>Branding and digital assets emphasizing sustainability and freshness.</p>
+        <a href="portfolio.html" class="project-link">View Project →</a>
+      </div>
+
+      <div class="glance-item project-card project" data-fancybox="icecream">
+        <video class="lazy-video" muted playsinline loop data-src="images/glance6.mp4"></video>
+        <h3>Ice Cream Shop</h3>
+        <p>Promotional and web visuals for a local ice cream brand.</p>
+        <a href="portfolio.html" class="project-link">View Project →</a>
+      </div>
+
+      <div class="glance-item project-card project" data-fancybox="racerx">
+        <video class="lazy-video" muted playsinline loop data-src="images/glance2.mp4"></video>
+        <h3>RacerX</h3>
+        <p>Magazine and layout design showcasing racing content and photography.</p>
+        <a href="portfolio.html" class="project-link">View Project →</a>
+      </div>
+
+      <div class="glance-item project-card project" data-fancybox="magazine">
+        <video class="lazy-video" muted playsinline loop data-src="images/glance5.mp4"></video>
+        <h3>Magazine Layouts</h3>
+        <p>Editorial design projects highlighting typography, hierarchy, and color.</p>
+        <a href="portfolio.html" class="project-link">View Project →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Full Portfolio -->
+<section class="full-portfolio-wrapper fade-up section-white">
+  <div class="section-inner">
+    <h2>Full Portfolio</h2>
+    <p>A fully designed visual portfolio showcasing branding, layout design, and digital presentation work.</p>
+    <a href="portfolio.html" class="btn btn-primary">View Full Portfolio →</a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="fade-up section-white">
+  <div class="section-inner contact-grid">
+
+    <div class="contact-left">
+      <div class="contact-flip">
+        <div class="contact-flip-inner">
+          <div class="contact-flip-front">
+            <img src="./images/contact2.gif" alt="Contact illustration">
+          </div>
+          <div class="contact-flip-back">
+            <img src="./images/contact1.gif" alt="Contact info">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <form id="contactForm" action="https://formspree.io/f/xeelewqg" method="POST" class="contact-form">
+
+        <div class="floating-group">
+          <input type="text" name="name" placeholder=" " required>
+          <label>Your Name</label>
+        </div>
+
+        <div class="floating-group">
+          <input type="email" name="email" placeholder=" " required>
+          <label>Your Email</label>
+        </div>
+
+        <div class="floating-group">
+          <textarea name="message" rows="4" placeholder=" " required></textarea>
+          <label>Your Message</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary glow-btn">
+          Send Message
+        </button>
+
+        <div id="formSuccess" class="form-success">
+          Message sent successfully! I'll get back to you soon.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-nav">
+  <div class="section-inner">
+    <img src="images/logo.png" alt="Jamie Logo" class="footer-logo">
+    <div class="footer-buttons">
+      <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
+      <a href="mailto:your@email.com" class="footer-link">Email Me</a>
+      <a href="tel:+11234567890" class="footer-link">Call Me</a>
+      <a href="#projects" class="footer-link">View Case Studies</a>
+      <a href="assets/resume.docx" download class="footer-link">Download Resume</a>
+    </div>
+    <medium>Designed with accessibility and clarity in mind.</medium>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="backToTop" title="Back to Top">↑</button>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
