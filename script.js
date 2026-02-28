@@ -1,47 +1,30 @@
-// ===== Back to Top Button =====
-const backToTop = document.getElementById("backToTop");
-window.addEventListener("scroll", () => {
-  backToTop.style.display = window.scrollY > 400 ? "block" : "none";
-});
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+console.log("JS connected");
 
-
-// ===== Contact Form =====
-const form = document.getElementById("contactForm");
-const success = document.getElementById("formSuccess");
-if (success) success.style.display = "none";
-
-if (form) {
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-      if (response.ok) {
-        success.style.display = "block";
-        form.reset();
-        setTimeout(() => success.style.display = "none", 5000);
-      }
-    })
-    .catch(console.error);
-  });
-}
-
-
-// ===== Fade Up Animation (existing sections) =====
 document.addEventListener("DOMContentLoaded", () => {
-  const fadeEls = document.querySelectorAll(".fade-up");
 
-  fadeEls.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) el.classList.add("visible");
+  /* ================= SCROLL PROGRESS ================= */
+  const progress = document.getElementById("scrollProgress");
+  window.addEventListener("scroll", () => {
+    if (!progress) return;
+    const scrollTop = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    progress.style.width = (scrollTop / height) * 100 + "%";
   });
 
+  /* ================= BACK TO TOP ================= */
+  const backToTop = document.getElementById("backToTop");
+  if (backToTop) {
+    backToTop.style.display = "none";
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  /* ================= FADE UP SECTIONS ================= */
+  const fadeEls = document.querySelectorAll(".fade-up");
   function checkVisibility() {
     const triggerBottom = window.innerHeight * 0.9;
     fadeEls.forEach((el, i) => {
@@ -51,141 +34,62 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
   window.addEventListener("scroll", checkVisibility);
   checkVisibility();
-});
 
-
-// ===== Smooth Scroll for Nav & Footer Links =====
-const navLinks = document.querySelectorAll(".nav-link");
-const footerLinks = document.querySelectorAll(".footer-link");
-const sections = document.querySelectorAll("section");
-const navbar = document.querySelector(".navbar");
-const navbarHeight = navbar ? navbar.offsetHeight : 0;
-
-function fastScroll(link) {
-  const targetID = link.getAttribute("href");
-  if (!targetID.startsWith("#")) return;
-
-  const target = document.querySelector(targetID);
-  if (target) {
-    const offsetTop = target.offsetTop - navbarHeight + 5;
-    window.requestAnimationFrame(() => {
-      window.scrollTo({ top: offsetTop, behavior: "smooth" });
+  /* ================= FANCYBOX ================= */
+  if (typeof Fancybox !== "undefined") {
+    Fancybox.bind("[data-fancybox]", {
+      infinite: true,
+      Thumbs: { autoStart: true },
+      Toolbar: { display: ["zoom", "close"] },
+      dragToClose: true
     });
   }
-}
 
-[...navLinks, ...footerLinks].forEach(link => {
-  link.addEventListener("click", e => {
+  /* ================= CONTACT FORM ================= */
+  const contactForm = document.getElementById("contactForm");
+  const formSuccess = document.getElementById("formSuccess");
+  contactForm?.addEventListener("submit", function(e) {
     e.preventDefault();
-    fastScroll(link);
-  });
-});
-
-
-// ===== Active Nav Link on Scroll =====
-function setActiveNav() {
-  const scrollPos = window.scrollY + navbarHeight + 50;
-
-  sections.forEach(section => {
-    const top = section.offsetTop;
-    const bottom = top + section.offsetHeight;
-    const navLink = document.querySelector(`.nav-link[href="#${section.id}"]`);
-
-    if (scrollPos >= top && scrollPos < bottom) {
-      navLinks.forEach(link => link.classList.remove("active"));
-      if (navLink) navLink.classList.add("active");
+    if (formSuccess) {
+      formSuccess.style.display = "block";
+      setTimeout(() => { formSuccess.style.display = "none"; }, 5000);
     }
+    contactForm.reset();
   });
-}
 
-window.addEventListener("scroll", setActiveNav);
-window.addEventListener("DOMContentLoaded", setActiveNav);
-setActiveNav();
+  /* ================= RESUME VIDEO ================= */
+  const resumeVideo = document.querySelector('.resume-image');
+  if (resumeVideo) {
+    resumeVideo.play().catch(() => { resumeVideo.muted = true; resumeVideo.play(); });
+  }
 
-
-// ===== Active Footer Link on Scroll =====
-function setFooterActive() {
-  const scrollPos = window.scrollY + navbarHeight + 50;
-
-  sections.forEach(section => {
-    footerLinks.forEach(link => {
-      const target = document.querySelector(link.getAttribute("href"));
-
-      if (target) {
-        if (scrollPos >= target.offsetTop && scrollPos < target.offsetTop + target.offsetHeight) {
-          footerLinks.forEach(l => l.classList.remove("active"));
-          link.classList.add("active");
+  /* ================= LAZY LOAD VIDEOS ================= */
+  const lazyVideos = document.querySelectorAll(".lazy-video");
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        if (video.dataset.src && !video.src) {
+          video.src = video.dataset.src;
+          video.load();
         }
+        video.play().catch(() => { video.muted = true; video.play(); });
+      } else {
+        video.pause();
       }
     });
-  });
-}
+  }, { root: null, threshold: 0.25 });
 
-window.addEventListener("scroll", setFooterActive);
-window.addEventListener("DOMContentLoaded", setFooterActive);
-setFooterActive();
+  lazyVideos.forEach(video => {
+    videoObserver.observe(video);
 
-
-// ===================================================
-// ===== NEW: Project Card Scroll-In Animation =====
-// ===================================================
-
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".project-card");
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  cards.forEach(card => observer.observe(card));
-});
-
-const resumeVideo = document.querySelector('.resume-image');
-
-if (resumeVideo) {
-  resumeVideo.pause(); // start paused
-
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          resumeVideo.play().catch(e => console.log(e)); // play only when visible
-          observer.unobserve(entry.target); // stop observing
-        }
-      });
-    },
-    { threshold: 0.5 } // 50% visible
-  );
-
-  observer.observe(resumeVideo);
-}
-
-document.querySelectorAll(".slider").forEach(slider => {
-  const images = slider.querySelectorAll(".slide-images img");
-  let index = 0;
-
-  function showImage(i) {
-    images.forEach(img => img.classList.remove("active"));
-    images[i].classList.add("active");
-  }
-
-  slider.querySelector(".left").addEventListener("click", () => {
-    index = (index - 1 + images.length) % images.length;
-    showImage(index);
+    // Hover play for cards
+    const card = video.closest(".project-card, .glance-item");
+    if (!card) return;
+    card.addEventListener("mouseenter", () => video.play().catch(() => { video.muted = true; video.play(); }));
+    card.addEventListener("mouseleave", () => video.pause());
   });
 
-  slider.querySelector(".right").addEventListener("click", () => {
-    index = (index + 1) % images.length;
-    showImage(index);
-  });
 });
