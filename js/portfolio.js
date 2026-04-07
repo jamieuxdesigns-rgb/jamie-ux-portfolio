@@ -89,3 +89,13 @@ Fancybox.bind("[data-fancybox]", {
   Thumbs: false,        // hide thumbnails
   dragToClose: true,    // swipe to close
 });
+
+Fancybox.bind("[data-fancybox='magazine']", {
+  Thumbs: false,
+  Toolbar: {
+    display: ["close"],
+  },
+  Image: {
+    zoom: true,
+  },
+});

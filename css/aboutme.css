@@ -1,0 +1,115 @@
+.hero-wrapper {
+  min-height: 50vh;
+  display: flex;
+  align-items: flex-start; /* THIS moves content UP */
+}
+
+.hero-wrapper {
+  position: relative;
+}
+
+.hero-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3); /* adjust */
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-buttons a {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.section-dark {
+  background-color: #0f172a;
+}
+
+
+.section-bright {
+  background-color: #fa8072;
+}
+
+
+.section-light{
+  background-color: #f6f5f2;
+}
+
+#skills.btn-primary {
+  background-color: #f6f5f2;
+  border-color: #f6f5f2;
+  color: #0f172a; /* dark text for contrast */
+}
+
+#resume .section-inner {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+#resume .resume-buttons .btn-primary {
+  background-color: #14b8a6;
+  border-color: #14b8a6;
+  color: #ffffff; /* white text for contrast */
+}
+
+#resume .resume-buttons .btn-primary:hover {
+  background-color: #0fa296; /* slightly darker teal for hover */
+  border-color: #0fa296;
+  color: #ffffff;
+}
+
+/* Skills section background */
+#skills {
+  background-color: #fa8072; /* salmon background */
+  color: #ffffff; /* default text color for contrast */
+  text-align: center; /* center all text & pills */
+}
+
+/* Section inner spacing */
+#skills .section-inner {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Skills container */
+#skills .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* center pills */
+  gap: 12px; /* space between pills */
+  margin-top: 20px; /* space below title */
+}
+
+
+/* ================= IMAGES ================= */
+img { max-width: 100%; height: auto; display: block; }
+
+/* ================= SKILLS ================= */
+.skill-pill {
+  background-color: #ffffff;
+  color: #0f172a;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.skill-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(250,128,114,0.6);
+}
+
+#skills .section-title {
+  margin-bottom: 40px;
+}
+
+#skills .section-inner {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}

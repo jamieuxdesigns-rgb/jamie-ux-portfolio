@@ -1,0 +1,76 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white border-bottom">
+  <div class="container">
+    <!-- Logo + site name linking to home -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/logo.png" alt="Jamie Logo" class="nav-logo me-2">
+      Jamie.UXDesigns
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav links -->
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="portfolio.html">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-wrapper">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="videos/heroindex.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>UX & Graphic Designer creating calm, accessible digital experiences people trust.</h1>
+      <p>Designing calm, research-driven digital experiences...</p>
+    </div>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary glow-btn">Portfolio</a>
+      <a href="https://linkedin.com" target="_blank" class="btn btn-primary glow-btn">LinkedIn</a>
+      <a href="images/resume-view.png" target="_blank" class="btn btn-primary glow-btn">Resume</a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer-nav">
+  <div class="section-inner">
+    <img src="images/logo.png" alt="Jamie Logo" class="footer-logo">
+    <div class="footer-buttons">
+      <a href="contact.html" class="footer-link">Email Me</a>
+      
+      <!-- Smart Call Me link -->
+      <a href="tel:+11234567890" 
+         onclick="if(!/Mobi|Android/i.test(navigator.userAgent)){ this.href='contact.html'; }" 
+         class="footer-link">
+        Call Me
+      </a>
+
+      <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
+      <a href="#projects" class="footer-link">View Case Studies</a>
+      <a href="assets/resume.docx" download class="footer-link">Download Resume</a>
+    </div>
+    <medium>Designed with accessibility and clarity in mind.</medium>
+  </div>
+</footer>

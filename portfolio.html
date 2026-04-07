@@ -20,16 +20,13 @@
 </head>
 <body>
 
-<!-- Scroll Progress Bar -->
-<div id="scrollProgressContainer">
-  <div id="scrollProgress"></div>
-</div>
-
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white border-bottom">
   <div class="container">
-    <img src="images/logo.png" alt="Jamie Logo" class="nav-logo">
-    <a class="navbar-brand fw-semibold" href="#">Jamie.UXDesigns</a>
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/logo.png" alt="Jamie Logo" class="nav-logo me-2">
+      Jamie.UXDesigns
+    </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
@@ -37,161 +34,540 @@
 
     <div id="nav" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link pulse-glow" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link pulse-glow" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link pulse-glow" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link pulse-glow" href="#resume">Resume</a></li>
-        <li class="nav-item"><a class="nav-link pulse-glow" href="#contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link pulse-glow" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link pulse-glow" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link pulse-glow" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link pulse-glow" href="contact.html">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
 <!-- Hero -->
-<section class="hero-wrapper">
-  <div class="hero-video">
+<section class="hero-wrapper section-white">
+    <div class="hero-video">
     <video autoplay muted loop playsinline preload="metadata">
-      <source src="videos/heroindex.mp4" type="video/mp4">
+      <source src="videos/PortfolioHero.mp4" type="video/mp4">
     </video>
   </div>
-
-  <div class="hero-inner">
-    <div class="hero-text">
-      <h1>UX & Graphic Designer creating calm, accessible digital experiences people trust.</h1>
-      <p>Designing calm, research-driven digital experiences...</p>
-    </div>
-
-    <div class="hero-buttons">
-      <a href="#projects" class="btn btn-primary glow-btn">Portfolio</a>
-      <a href="https://linkedin.com" target="_blank" class="btn btn-primary glow-btn">LinkedIn</a>
-      <a href="images/resume-view.png" target="_blank" class="btn btn-primary glow-btn">Resume</a>
-    </div>
+  <div class="section-inner">
+    <h1>UX & Graphic Designer creating calm, accessible digital experiences people trust.</h1>
+    <p>Designing calm, research-driven digital experiences...</p>
   </div>
 </section>
 
-<!-- Portfolio Sections -->
-<section id="mockups" class="fade-up portfolio-section section-white">  
+
+
+<section id="projects-graphics" class="fade-up section-white">
   <div class="section-inner">
-    <h2>Table Of Contents</h2>
+
+    <div class="two-column-sections">
+
+      <!-- LEFT COLUMN: Web Design -->
+      <div class="section-column">
+        <h2>Web Design</h2>
+        <div class="cards-row">
+          <div class="project-card">
+            <video autoplay muted loop playsinline>
+              <source src="videos/camp.mp4" type="video/mp4">
+            </video>
+            <h3>Camp Woofs & Wiggles</h3>
+            <p>Responsive website design for a dog care company.</p>
+            <a href="woof.html" class="project-link">View Case Study →</a>
+          </div>
+          <div class="project-card">
+            <video autoplay muted loop playsinline>
+              <source src="videos/vet.mp4" type="video/mp4">
+            </video>
+            <h3>Vet Clinic Site</h3>
+            <p>Web design project for a local veterinary clinic.</p>
+            <a href="veterinary.html" class="project-link">View Case Study →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: App Design -->
+      <div class="section-column">
+        <h2>App / UI Design</h2>
+        <div class="cards-row">
+          <div class="project-card">
+            <video autoplay muted loop playsinline>
+              <source src="videos/money.mp4" type="video/mp4">
+            </video>
+            <h3>FutureFunds Mobile App</h3>
+            <p>Clear onboarding experience for first-time investors.</p>
+            <a href="futurefunds.html" class="project-link">View Case Study →</a>
+          </div>
+          <div class="project-card">
+            <video autoplay muted loop playsinline>
+              <source src="videos/train.mp4" type="video/mp4">
+            </video>
+            <h3>Horizon Railways Tickets</h3>
+            <p>Improving readability and clarity for travelers.</p>
+            <a href="horizon.html" class="project-link">View Case Study →</a>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /.two-column-sections -->
+
+  </div>
+</section>
+
+<!-- At A Glance - Magazine Flipbook -->
+<section id="at-a-glance" class="fade-up section-white">
+  <div class="section-inner">
+    <h2>Look Book</h2>
+    <p class="glance-subtitle">A curated snapshot of selected visual and interaction work.(Click on image to enlarge)</p>
 
     <div class="flipbook-container d-flex justify-content-center align-items-center">
       <button class="prev btn btn-outline-secondary">‹</button>
 
       <div class="flipbook d-flex overflow-hidden gap-3">
+
+        <!-- Flipbook Cards -->
         <div class="card">
-          <a data-fancybox="mockups" href="images/look1 (1).png">
-            <img src="images/look1 (1).png" alt="Mockup 1">
+          <a data-fancybox="magazine" href="images/look1 (1).png">
+            <img src="images/look1 (1).png" alt="My Portfolio Magazine Cover Page">
           </a>
         </div>
+
         <div class="card">
-          <a data-fancybox="mockups" href="images/look1 (2).png">
-            <img src="images/look1 (2).png" alt="Mockup 2">
+          <a data-fancybox="magazine" href="images/look1 (2).png">
+            <img src="images/look1 (2).png" alt="Table Of Contents Page 1/2">
           </a>
         </div>
+
         <div class="card">
-          <a data-fancybox="mockups" href="images/look1 (3).png">
-            <img src="images/look1 (3).png" alt="Mockup 3">
+          <a data-fancybox="magazine" href="images/look1 (3).png">
+            <img src="images/look1 (3).png" alt="Table Of Contents Page 2/2">
           </a>
         </div>
+
         <div class="card">
-          <a data-fancybox="mockups" href="images/look1 (4).png">
-            <img src="images/look1 (4).png" alt="Mockup 4">
+          <a data-fancybox="magazine" href="images/look1 (4).png">
+            <img src="images/look1 (4).png" alt="About The Designer Page">
           </a>
         </div>
+
         <div class="card">
-          <a data-fancybox="mockups" href="images/look1 (5).png">
-            <img src="images/look1 (5).png" alt="Mockup 5">
+          <a data-fancybox="magazine" href="images/look1 (5).png">
+            <img src="images/look1 (5).png" alt="Jamie.UXDesigns Brand Identity Page">
           </a>
         </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (6).png">
+            <img src="images/look1 (6).png" alt="Altered State Book Jacket Design Intro Page 1/5">
+          </a>
+        </div>
+
+           <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (7).png">
+            <img src="images/look1 (7).png" alt="Altered State Book Jacket Full Color Design Details Page 2/5">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (8).png">
+            <img src="images/look1 (8).png" alt="Altered State Book Jacket Monocolor Design Details Page 3/5">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (9).png">
+            <img src="images/look1 (9).png" alt="Altered State Book Jacket Two Color Design Details Page 4/5">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (10).png">
+            <img src="images/look1 (10).png" alt="Altered State Book Jacket Design Advertisement Wrap Up Page 5/5">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (11).png">
+            <img src="images/look1 (11).png" alt="Local Sustainable Fresh Branding And Delivery Service Mockup Intro Page 1/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (12).png">
+            <img src="images/look1 (12).png" alt="Local Sustainable Fresh Advertisment Flyer And Icon Page 2/4">
+          </a>
+        </div>
+
+          <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (13).png">
+            <img src="images/look1 (13).png" alt="Local Sustainable Fresh Integrated Advertising Extensions Page 3/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (14).png">
+            <img src="images/look1 (14).png" alt="Local Sustainable Fresh Expanded Digital Mobile Campaign Wrap Up Page 4/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (15).png">
+            <img src="images/look1 (15).png" alt="Art Magazine Layout Details Intro Page 1/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (16).png">
+            <img src="images/look1 (16).png" alt="Art Magazine Layout Floral Artist Branding Details Page 2/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (17).png">
+            <img src="images/look1 (17).png" alt="Art Magazine Layout Floral Artist Branding Details Wrap Up Page 3/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (18).png">
+            <img src="images/look1 (18).png" alt="Piddle Paddle Tours Trifold Brocure Design Intro Page 1/3">
+          </a>
+        </div>
+
+           <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (19).png">
+            <img src="images/look1 (19).png" alt="Piddle Paddle Tours Trifold Brocure Outside Design Page 2/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (20).png">
+            <img src="images/look1 (20).png" alt="Piddle Paddle Tours Trifold Brocure Inside Design Wrap UpPage 3/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (21).png">
+            <img src="images/look1 (21).png" alt="Tulips And Roses Website Design Intro Page 1/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (22).png">
+            <img src="images/look1 (22).png" alt="Tulips And Roses Website Design Wireframe and Brand Mock Up Page 2/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (23).png">
+            <img src="images/look1 (23).png" alt="Tulips And Roses Website Brand Style Guide Page 3/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (24).png">
+            <img src="images/look1 (24).png" alt="Tulips And Roses Website Advertisments Wrap Up Page 4/4">
+          </a>
+        </div>
+
+          <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (25).png">
+            <img src="images/look1 (25).png" alt="Purrfectly Peppy Figma Website Design Intro Page 1/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (26).png">
+            <img src="images/look1 (26).png" alt="Purrfectly Peppy Figma Website Design Functional And Interactive Features Page 2/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (27).png">
+            <img src="images/look1 (27).png" alt="Purrfectly Peppy Figma Website Design Advertisments Wrap Up Page 3/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (28).png">
+            <img src="images/look1 (28).png" alt="Scoop Shop Animated brand Exploration Intro Page 1/2">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (29).png">
+            <img src="images/look1 (29).png" alt="Scoop Shop Advertisment and Animated Gif Page 2/2">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (30).png">
+            <img src="images/look1 (30).png" alt="Wiggle And Wags Interactive Website Development Intro Page 1/4">
+          </a>
+        </div>
+
+           <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (31).png">
+            <img src="images/look1 (31).png" alt="Wiggle And Wags Website Interactive Features and Development Page 2/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (32).png">
+            <img src="images/look1 (32).png" alt="Wiggle And Wags Website Interactive Features and Development (Cont.) Page 3/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (33).png">
+            <img src="images/look1 (33).png" alt="Wiggle And Wags Website Advertisment And Project Wrap Up Page 4/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (34).png">
+            <img src="images/look1 (34).png" alt="Campus Press Portfolio Intro Page 1/5">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (35).png">
+            <img src="images/look1 (35).png" alt="Campus Press Portfolio Branding Details Page 2/5">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (36).png">
+            <img src="images/look1 (36).png" alt="Campus Press Portfolio Mock Up And Business Cards Page 3/5">
+          </a>
+        </div>
+
+          <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (37).png">
+            <img src="images/look1 (37).png" alt="Campus Press Portfolio Project Wrap Up Page 4/5">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (38).png">
+            <img src="images/look1 (38).png" alt="Campus Press Portfolio Resume Page 5/5">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (39).png">
+            <img src="images/look1 (39).png" alt="Future Funds App/Website Intro Page 1/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (40).png">
+            <img src="images/look1 (40).png" alt="Future Funds App/Website Design High Fidelity Mockups And Functional Features Page 2/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (41).png">
+            <img src="images/look1 (41).png" alt="Future Funds App/Website Design Advertisments And Project Wrap Up Page 3/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (42).png">
+            <img src="images/look1 (42).png" alt="Camper Cafe Branding Intro Page 1/7">
+          </a>
+        </div>
+
+           <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (43).png">
+            <img src="images/look1 (43).png" alt="Camper Cafe Branding Menu Page 2/7">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (44).png">
+            <img src="images/look1 (44).png" alt="Camper Cafe Branding Details Page 3/7">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (45).png">
+            <img src="images/look1 (45).png" alt="Camper Cafe Branding Merchandise And Advertising Mock Ups Page 4/7">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (46).png">
+            <img src="images/look1 (46).png" alt="Camper Cafe Branding Merchandise And Advertising Mock Ups (Cont.) Page 5/7">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (47).png">
+            <img src="images/look1 (47).png" alt="Camper Cafe Branding Merchandise And Advertising Mock Ups (Cont.) Page 6/7">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (48).png">
+            <img src="images/look1 (48).png" alt="Camper Cafe Branding Merchandise And Advertising Mock Ups (Cont.) Wrap UpPage 7/7">
+          </a>
+        </div>
+
+          <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (49).png">
+            <img src="images/look1 (49).png" alt="RacerX Brand Identity Mock Up Details Intro Page 1/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (50).png">
+            <img src="images/look1 (50).png" alt="RacerX Brand Identity Mock Up Page 2/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (51).png">
+            <img src="images/look1 (51).png" alt="RacerX Brand Identity Mock Up (Cont.)Page 3/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (52).png">
+            <img src="images/look1 (52).png" alt="RacerX Brand Identity Mock Up (Cont.) Wrap Up 4/4">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (53).png">
+            <img src="images/look1 (53).png" alt="Horizon RailLines Tickets App Mock Up Details IntroPage 1/2">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (54).png">
+            <img src="images/look1 (54).png" alt="Horizon RailLines Tickets App Mock Up Wrap UpPage 2/2">
+          </a>
+        </div>
+
+           <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (55).png">
+            <img src="images/look1 (55).png" alt="Free Code Camp Intro Page 1/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (56).png">
+            <img src="images/look1 (56).png" alt="Free Code Camp Details Page 2/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (57).png">
+            <img src="images/look1 (57).png" alt="Free Code Camp Details (Cont.) Wrap Up Page 3/3">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (58).png">
+            <img src="images/look1 (58).png" alt="Flyer And Design Infographic Intro Page 1/6">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (59).png">
+            <img src="images/look1 (59).png" alt="Flyer And Design Infographic Donut Bytes Page 2/6">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (60).png">
+            <img src="images/look1 (60).png" alt="Flyer And Design InfographicNorth American Page 3/4">
+          </a>
+        </div>
+
+          <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (61).png">
+            <img src="images/look1 (61).png" alt="Flyer And Design Infographic Collage Pizza Page 4/6">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (62).png">
+            <img src="images/look1 (62).png" alt="Flyer And Design Infographic Art Museum Page 5/6">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (63).png">
+            <img src="images/look1 (63).png" alt="Flyer And Design Infographic Tech Data And Wrap Up Page">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (64).png">
+            <img src="images/look1 (64).png" alt="Creative Applications Details Intro Page 1/2">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (65).png">
+            <img src="images/look1 (65).png" alt="Creative Applications Details Wrap Up Page 2/2">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (66).png">
+            <img src="images/look1 (66).png" alt="Wireframes Figma Intro Page 1/2">
+          </a>
+        </div>
+
+           <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (67).png">
+            <img src="images/look1 (67).png" alt="Wireframes Canva And Wrap Up Page 2/2">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (68).png">
+            <img src="images/look1 (68).png" alt="Thank You Page">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (69).png">
+            <img src="images/look1 (69).png" alt="Contact Info Page">
+          </a>
+        </div>
+
+        <div class="card">
+          <a data-fancybox="magazine" href="images/look1 (70).png">
+            <img src="images/look1 (70).png" alt="Back Cover Page">
+          </a>
+        </div>
+
       </div>
 
       <button class="next btn btn-outline-secondary">›</button>
     </div>
   </div>
 </section>
-
-<section id="webdesign" class="fade-up bg-dark-gray text-white"> 
-  <div class="section-inner">
-    <h2>Book Jacket Mock-Up</h2>
-
-    <div class="flipbook-container d-flex justify-content-center align-items-center">
-      <button class="prev btn btn-outline-light">‹</button>
-
-      <div class="flipbook d-flex overflow-hidden gap-3">
-        <div class="card">
-          <a data-fancybox="webdesign" href="images/look1 (6).png">
-            <img src="images/look1 (6).png" alt="Web 2">
-          </a>
-        </div>
-        <div class="card">
-          <a data-fancybox="webdesign" href="images/look1 (7).png">
-            <img src="images/look1 (7).png" alt="Web 3">
-          </a>
-        </div>
-        <div class="card">
-          <a data-fancybox="webdesign" href="images/look1 (8).png">
-            <img src="images/look1 (8).png" alt="Web 4">
-          </a>
-        </div>
-        <div class="card">
-          <a data-fancybox="webdesign" href="images/look1 (9).png">
-            <img src="images/look1 (9).png" alt="Web 5">
-          </a>
-        </div>
-        <div class="card">
-          <a data-fancybox="webdesign" href="images/look1 (10).png">
-            <img src="images/look1 (10).png" alt="Web 6">
-          </a>
-        </div>
-      </div>
-
-      <button class="next btn btn-outline-light">›</button>
-    </div>
-  </div>
-</section>
-
-  <button class="next btn btn-outline-light">›</button>
-
-<section id="webdesign" class="fade-up bg-dark-gray text-white"> 
-  <div class="section-inner">
-    <h2>Book Jacket Mock-Up</h2>
-    <div class="flipbook-container d-flex justify-content-center align-items-center">
-  <button class="prev btn btn-outline-light">‹</button>
-
-  <div class="flipbook d-flex overflow-hidden gap-3">
-    <div class="card"><img src="images/look1 (6).png" alt="Web 2"></div>
-    <div class="card"><img src="images/look1 (7).png" alt="Web 3"></div>
-    <div class="card"><img src="images/look1 (8).png" alt="Web 4"></div>
-    <div class="card"><img src="images/look1 (9).png" alt="Web 5"></div>
-    <div class="card"><img src="images/look1 (10).png" alt="Web 6"></div>
-  </div>
-
-  <button class="next btn btn-outline-light">›</button>
-</div>
-  </div>
-
-<!-- Footer -->
 <footer class="footer-nav">
   <div class="section-inner">
     <img src="images/logo.png" alt="Jamie Logo" class="footer-logo">
     <div class="footer-buttons">
-      <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
-      <a href="mailto:your@email.com" class="footer-link">Email Me</a>
+      <a href="contact.html" class="footer-link">Email Me</a>
       <a href="tel:+11234567890" class="footer-link">Call Me</a>
+      <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
       <a href="#projects" class="footer-link">View Case Studies</a>
       <a href="assets/resume.docx" download class="footer-link">Download Resume</a>
     </div>
-    <medium>Designed with accessibility and clarity in mind.</medium>
+    <small>Designed with accessibility and clarity in mind.</small>
   </div>
 </footer>
 
-<!-- Back to Top -->
-<button id="backToTop" title="Back to Top">↑</button>
-
-<!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 <script src="js/portfolio.js"></script>
 </body>
-
 </html>

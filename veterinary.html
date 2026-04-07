@@ -15,34 +15,58 @@
 
 <div id="progress"></div>
 
-<!-- NAV -->
-<nav class="navbar navbar-expand-lg">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white border-bottom">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Jamie</a>
-    <ul class="navbar-nav ms-auto d-flex flex-row gap-4">
-      <li><a class="nav-link" href="#overview">Overview</a></li>
-      <li><a class="nav-link" href="#process">Process</a></li>
-      <li><a class="nav-link" href="#results">Results</a></li>
-      <li><a class="nav-link" href="#contact">Contact</a></li>
-    </ul>
+    <!-- Logo + site name linking to home -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/logo.png" alt="Jamie Logo" class="nav-logo me-2">
+      Jamie.UXDesigns
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav links -->
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="portfolio.html">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero fade-up" style="padding-top:0; padding-bottom:4rem; text-align:center;">
-  <video src="videos/heropep.mp4" autoplay muted playsinline loop
-         style="width:100%; max-width:1500px; border-radius:15px; display:block; margin:0 auto;">
-  </video>
-
-  <h1 style="margin-top:1rem; margin-bottom:0.5rem;">Purrfectly Peppey Veterinary</h1>
-
-  <p style="max-width:720px; margin:0 auto 1.2rem;">
-    A user-centered website redesign for a veterinary clinic focused on
-    simplifying appointment scheduling, improving content clarity,
-    and creating a warm, trustworthy digital experience for pet owners.
-  </p>
-
-  <a href="#overview" class="glow-btn">View Case Study</a>
+<section class="hero-wrapper">
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="videos/FutureFundsHero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>UX & Graphic Designer creating calm, accessible digital experiences people trust.</h1>
+      <p>Designing calm, research-driven digital experiences...</p>
+    </div>
+    <div class="hero-buttons">
+      <a href="portfolio.html" class="btn btn-primary glow-btn">Portfolio</a>
+      <a href="#figma-prototype" class="btn btn-primary glow-btn">Interactive Prototype</a>
+      <a href="contact.html" class="btn btn-primary glow-btn">Contact Me</a>
+    </div>
+  </div>
 </section>
 
 <!-- OVERVIEW -->
@@ -79,10 +103,7 @@
         <div class="metric-card h-100">
           <h3 style="font-size:1.4rem;">Problem</h3>
           <p>
-            The original veterinary website lacked clear navigation,
-            made appointment booking difficult to find, and presented
-            dense service information that created friction for pet owners
-            seeking quick answers.
+           The original Purrfectly Peppy website presented challenges for pet owners: navigation was confusing, scheduling appointments was not immediately obvious, and information about services was dense and difficult to scan. Users struggled to find quick answers for their pets’ care needs.
           </p>
         </div>
       </div>
@@ -92,10 +113,7 @@
         <div class="metric-card h-100">
           <h3 style="font-size:1.4rem;">Solution</h3>
           <p>
-            A user-centered redesign introduced simplified navigation,
-            a prominent scheduling flow, improved content hierarchy,
-            and a warm visual style to create a more approachable and
-            intuitive digital experience.
+           A user-centered redesign introduced streamlined navigation, a clear and prominent appointment booking flow, better-organized content hierarchy, and a friendly, professional visual style that conveys trust and approachability.
           </p>
         </div>
       </div>
@@ -105,9 +123,7 @@
         <div class="metric-card h-100">
           <h3 style="font-size:1.4rem;">Outcome</h3>
           <p>
-            The final prototype demonstrates clearer task completion,
-            stronger visual trust signals, and a responsive layout that
-            supports real-world usability for modern veterinary clients.
+            The final prototype demonstrates more efficient task completion, stronger visual trust cues, and a responsive layout that adapts seamlessly across devices, ensuring an intuitive experience for modern veterinary clients.
           </p>
         </div>
       </div>
@@ -127,8 +143,7 @@
         <div class="process-icon">🔍</div>
         <h3>Research</h3>
         <p>
-          Reviewed user needs, evaluated the original site structure,
-          and identified friction points in navigation and appointment booking.
+          Reviewed user needs, analyzed the original site structure, and identified friction points in navigation and appointment booking. Developed low-fidelity wireframes to reorganize content, simplify navigation, and emphasize the scheduling process.
         </p>
       </div>
 
@@ -136,8 +151,7 @@
         <div class="process-icon">✏️</div>
         <h3>Wireframing</h3>
         <p>
-          Created low-fidelity layouts to organize content hierarchy,
-          simplify navigation, and prioritize scheduling actions.
+          Created responsive high-fidelity designs in Figma with accessible typography, calm and welcoming visuals, and clear, logical user flows. Evaluated usability to ensure core tasks—like booking an appointment or finding service information—are smooth and straightforward.
         </p>
       </div>
 
@@ -145,8 +159,7 @@
         <div class="process-icon">🧩</div>
         <h3>Prototyping</h3>
         <p>
-          Designed responsive high-fidelity screens in Figma with
-          accessible typography, warm visuals, and clear user flows.
+          Created responsive high-fidelity designs in Figma featuring accessible typography, inviting visuals, and intuitive user flows.
         </p>
       </div>
 
@@ -154,8 +167,7 @@
         <div class="process-icon">✅</div>
         <h3>Evaluation</h3>
         <p>
-          Reviewed usability and clarity of core tasks to ensure the
-          redesigned experience supports real-world veterinary clients.
+          Conducted usability reviews to ensure core tasks, such as appointment booking and service exploration, are clear, efficient, and support the needs of real-world veterinary clients.
         </p>
       </div>
 
@@ -169,10 +181,16 @@
   <div class="container">
     <h2>Research & Design</h2>
     <div class="gallery">
-      <img src="images/screen1.png" alt="Dashboard Mockup">
-      <img src="images/screen2.png" alt="Brand Style Guide">
-      <img src="images/screen3.png" alt="Mobile Mockup">
+      <img src="images/purrfectlypeppy/purrfectlyPeppyWireframeMockUpHome.png" alt="Dashboard Mockup">
+      <p class="gallery-caption">
+          The original design suffered from clutter, weak visual hierarchy, and limited accessibility cues. The redesign employs thoughtful color-coding, icons, and structured layouts to improve readability and usability. Prioritizing clear navigation and easy appointment scheduling significantly enhances the user experience.
+        </p>
+      <img src="images/purrfectlypeppy/Purrfecly Peppy Brand Style Guide.png" alt="Brand Style Guide">
+      <p class="gallery-caption">
+          Warm imagery, clean typography, and generous spacing make the veterinary services feel approachable and reliable, while the structured UX process—from research to prototype—delivers meaningful improvements that go beyond surface-level design.
+        </p>
     </div>
+  </div>
   </div>
 </section>
 
@@ -184,6 +202,13 @@
       src="https://embed.figma.com/proto/gxizJouXkWeH8g5H2KZ9o6/Project-Two?scaling=contain&content-scaling=fixed&page-id=0%3A1&node-id=4-81&starting-point-node-id=4%3A67&embed-host=share"
       allowfullscreen>
     </iframe>
+    https://www.figma.com/proto/HSRAa23igu9NDwr1mQZaIh/Week-2?t=FgMxe5YK9zvHlQhL-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=0-1
+        <p class="text-center mt-3 small">
+      If the prototype doesn’t load, 
+      <a href="https://www.figma.com/design/gxizJouXkWeH8g5H2KZ9o6/Purrfectly-Peppy?node-id=0-1&p=f&t=FgMxe5YK9zvHlQhL-0">
+        click here
+      </a> to view it in Figma.
+    </p>
   </div>
 </section>
 
@@ -197,8 +222,7 @@
       <div class="gallery-column">
         <h3>Before</h3>
         <div class="gallery">
-          <img src="assets/before.png" alt="Old Website">
-          <img src="assets/before2.png" alt="Old Website Additional">
+          <img src="images/purrfectlypeppy/WebsiteMockUp.png" alt="Old Website">
         </div>
       </div>
 
@@ -206,11 +230,22 @@
       <div class="gallery-column">
         <h3>After</h3>
         <div class="gallery">
-          <img src="assets/after.png" alt="Redesigned Website">
-          <img src="assets/after2.png" alt="Redesigned Website Additional">
-        </div>
+          <img src="images/purrfectlypeppy/PurrfectlyPeppyAfter.png" alt="Redesigned Website">
       </div>
 
+    </div>
+  </div>
+
+  
+    <div class="compare-text row mt-4">
+      <div class="col-md-6 mb-3">
+        <h4>Before</h4>
+        <p>The original designs were cluttered with low visual hierarchy and no accessibility cues.</p>
+      </div>
+      <div class="col-md-6 mb-3">
+        <h4>After – My Designs</h4>
+        <p>Redesigned using color-coding, icons, and clearer layout for better readability and usability.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -295,33 +330,32 @@
 
 
 <!-- CONTACT -->
-<section id="contact" class="hero fade-up">
+<section id="contact" class="hero fade-up text-center">
   <h2>Let’s Work Together</h2>
-  <a href="mailto:you@example.com" class="glow-btn">Email Me</a>
+  <div class="hero-buttons justify-content-center flex-wrap mt-3">
+    <a href="contact.html" class="btn btn-primary glow-btn m-2">Email Me</a>
+    <a href="https://www.linkedin.com/in/jamieuxdesigns" target="_blank" class="btn btn-primary glow-btn m-2">LinkedIn</a>
+    <a href="about.html#resume" class="btn btn-primary glow-btn m-2">Resume</a>
+  </div>
 </section>
-
+      
 <!-- FOOTER -->
-<footer>
-  <p>© 2026 Jamie — UX Portfolio</p>
-  <a href="index.html">Back to Portfolio</a>
+<footer class="footer-nav">
+  <div class="section-inner text-center">
+    <img src="images/logo.png" alt="Jamie Logo" class="footer-logo">
+    <div class="footer-buttons">
+      <a href="contact.html" class="footer-link">Email Me</a>
+      <a href="tel:+11234567890" 
+         onclick="if(!/Mobi|Android/i.test(navigator.userAgent)){ this.href='contact.html'; }" 
+         class="footer-link">Call Me</a>
+      <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
+      <a href="#projects" class="footer-link">View Case Studies</a>
+      <a href="assets/resume.docx" download class="footer-link">Download Resume</a>
+    </div>
+    <small>Designed with accessibility and clarity in mind.</small>
+  </div>
 </footer>
 
-<script>
-/* FADE */
-const faders=document.querySelectorAll(".fade-up");
-function show(){const t=window.innerHeight*.9;
-faders.forEach(el=>{if(el.getBoundingClientRect().top<t)el.classList.add("visible");});}
-window.addEventListener("scroll",show);
-window.addEventListener("DOMContentLoaded",show);
-
-/* PROGRESS BAR */
-window.addEventListener("scroll",()=>{
-  const win=window.scrollY;
-  const h=document.body.scrollHeight-window.innerHeight;
-  document.getElementById("progress").style.width=(win/h)*100+"%";
-});
-</script>
-
+<script src="js/vet.js"></script>
 </body>
 </html>
-

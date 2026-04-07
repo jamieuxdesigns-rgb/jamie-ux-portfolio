@@ -20,31 +20,28 @@ body{
 section{padding:90px 24px;}
 h2{font-weight:700;margin-bottom:2rem;text-align:center;}
 
-/* NAVBAR */
-.navbar{background:var(--bg-light);border-bottom:1px solid #eee;}
-.nav-link:hover,.nav-link.active{color:var(--accent);}
-
 /* HERO */
-.hero{
-  background:var(--bg-dark);
-  color:var(--text-light);
-  text-align:center;
-  padding:7rem 1rem;
+.hero-wrapper { text-align: center; padding: 60px 24px;  background-color: #ffffff;}
+.hero-video { width: 100%; max-width: 1200px; margin: 0 auto 40px; border-radius: 18px; background-color: #ffffff; }
+.hero-video video { width: 100%; height: auto; display: block; border-radius: inherit; }
+.hero-text h1, .hero-text p { color: var(--bg-dark); margin-bottom: 20px; }
+.hero-buttons { margin-top: 20px; }
+.hero-buttons .btn { margin: 0 8px 12px 8px; }
+/* Hero & Primary Buttons */
+.btn-primary,
+.hero-buttons .btn {
+  background-color: var(--accent);      /* salmon color */
+  border-color: var(--accent);          /* match border if any */
+  color: #ffffff;                        /* white text for contrast */
+  transition: background-color 0.3s;
 }
-.hero img{max-width:900px;width:100%;border-radius:18px;margin-top:24px;}
 
-/* BUTTON */
-.glow-btn{
-  background:var(--accent);
-  border:none;
-  padding:.9rem 2rem;
-  border-radius:999px;
-  font-weight:600;
-  color:#fff;
-  box-shadow:0 0 15px rgba(255,158,158,.6);
-  transition:.3s;
+.btn-primary:hover,
+.hero-buttons .btn:hover {
+  background-color: var(--accent-dark); /* slightly darker on hover */
+  border-color: var(--accent-dark);
+  color: #ffffff;
 }
-.glow-btn:hover{background:var(--accent-dark);transform:translateY(-2px);}
 
 /* GALLERY */
 .gallery{
@@ -107,29 +104,7 @@ iframe{
   transform: scale(1.03);
 }
 
-/* FOOTER */
-footer{
-  background:var(--bg-dark);
-  color:var(--text-light);
-  text-align:center;
-  padding:2.5rem;
-}
-footer a{color:var(--text-light);}
-footer a:hover{color:var(--accent);}
 
-/* FADE ANIMATION */
-.fade-up{opacity:0;transform:translateY(30px);transition:.5s ease;}
-.fade-up.visible{opacity:1;transform:translateY(0);}
-
-/* SCROLL PROGRESS BAR */
-#progress{
-  position:fixed;
-  top:0;left:0;
-  height:4px;
-  background:var(--accent);
-  width:0%;
-  z-index:9999;
-}
 
 /* UX PROCESS TIMELINE */
 .process-timeline{

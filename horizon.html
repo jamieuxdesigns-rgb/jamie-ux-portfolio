@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case Study | Future Funds App</title>
+<title>Case Study | Horizon Railways</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -15,39 +15,79 @@
 
 <div id="progress"></div>
 
-<!-- NAV -->
-<nav class="navbar navbar-expand-lg">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white border-bottom">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Jamie</a>
-    <ul class="navbar-nav ms-auto d-flex flex-row gap-4">
-      <li><a class="nav-link" href="#overview">Overview</a></li>
-      <li><a class="nav-link" href="#process">Process</a></li>
-      <li><a class="nav-link" href="#results">Results</a></li>
-      <li><a class="nav-link" href="#contact">Contact</a></li>
-    </ul>
+    <!-- Logo + site name linking to home -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/logo.png" alt="Jamie Logo" class="nav-logo me-2">
+      Jamie.UXDesigns
+    </a>
+
+    <!-- Mobile hamburger -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav links -->
+    <div id="nav" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="portfolio.html">Portfolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link pulse-glow" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-
 <!-- HERO -->
-<section class="hero fade-up" style="padding-top:0; padding-bottom:4rem; text-align:center;">
-  <video src="videos/herofut.mp4" autoplay muted playsinline loop
-         style="width:100%; max-width:1500px; border-radius:15px; display:block; margin:0 auto;">
-  </video>
+<section class="hero-wrapper">
+  <!-- Video on top -->
+  <div class="hero-video">
+    <video autoplay muted loop playsinline preload="metadata">
+      <source src="videos/HorizionRailwaysHero.mp4" type="video/mp4">
+    </video>
+  </div>
 
-  <h1 style="margin-top:1rem; margin-bottom:0.5rem;">Horizon Railways App</h1>
-  <p style="margin-bottom:1rem;">Designing a mobile ticketing app for Horizon Railways to simplify purchasing, tracking, and validating tickets, with a focus on clarity and speed for commuters.</p>
-  <a href="#overview" class="glow-btn">View Interactive Prototype</a>
+  <!-- Text stacked below video -->
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>UX & Graphic Designer creating calm, accessible digital experiences people trust.</h1>
+      <p>Designing calm, research-driven digital experiences...</p>
+    </div>
+
+    <!-- Buttons stacked below text -->
+    <div class="hero-buttons">
+      <a href="portfolio.html" class="btn btn-primary glow-btn">Portfolio</a>
+      <a href="#figma-prototype" class="btn btn-primary glow-btn">Interactive Prototype</a>
+      <a href="contact.html" class="btn btn-primary glow-btn">Contact Me</a>
+    </div>
+  </div>
 </section>
-
-
 
 
 <!-- OVERVIEW -->
 <section id="overview" class="fade-up">
   <div class="container">
     <h2>Project Overview</h2>
-    <p>Created a mobile ticketing app for Horizon Railways to simplify purchasing, tracking, and validating tickets, with a focus on clarity and speed for commuters.</p>
+    <p>
+      I redesigned the Horizon Railways mobile ticketing experience to make purchasing, tracking, and validating tickets faster and more intuitive. The goal was to streamline the journey from browsing routes to confirming purchases while ensuring accessibility and ease-of-use for commuters of all ages.
+    </p>
+    <p>
+      The project began with user research to identify common commuter pain points, followed by mapping user journeys to optimize ticketing flows. I created wireframes to visualize the steps and high-fidelity mockups in Figma to demonstrate clear hierarchy, touch-friendly controls, and visual consistency with Horizon Railways branding.
+    </p>
+    <p>
+      Iterative testing and user feedback refined the ticketing interface, producing a clean, efficient design that supports both daily commuters and occasional riders. The final solution emphasizes clarity, speed, and reliability, making it easy to find critical information, scan tickets, and confirm journeys while reinforcing the Horizon Railways brand.
+    </p>
   </div>
 </section>
 
@@ -55,88 +95,209 @@
 <section class="bg-soft fade-up">
   <div class="container">
     <h2>Research & Design</h2>
-    <div class="gallery">
-      <img src="assets/screen1.png" alt="Dashboard Mockup">
-      <img src="assets/screen2.png" alt="Brand Style Guide">
-      <img src="assets/screen3.png" alt="Mobile Mockup">
+    <div class="gallery-grid">
+      <!-- Brand Style Guide -->
+      <div class="gallery-item">
+        <img src="images/horizionrailways/HorizonRailwaysBrandStyleGuide.png" alt="Brand Style Guide">
+        <p class="gallery-caption">
+          Developed a cohesive brand style guide including colors, typography, and visual language for Horizon Railways.
+        </p>
+      </div>
+
+      <!-- Mockup -->
+      <div class="gallery-item">
+        <img src="images/horizionrailways/HorizionRailWaysMockUp.png" alt="Mockup">
+        <p class="gallery-caption">
+          Created high-fidelity mockups of the mobile app to showcase layout, interaction, and visual hierarchy.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FIGMA -->
-<section class="fade-up">
+
+<!-- FIGMA / PROTOTYPE -->
+<section id="figma-prototype" class="fade-up">
   <div class="container">
     <h2>Interactive Prototype</h2>
-    <iframe src="https://www.figma.com/embed?embed_host=share"></iframe>
+
+    <!-- Responsive phone-style container -->
+    <div style="max-width: 400px; margin: 0 auto; border: 1px solid #ccc; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <iframe
+        width="100%"
+        height="700"
+        src="https://embed.figma.com/design/HSRAa23igu9NDwr1mQZaIh/Week-2?node-id=0-1&embed-host=share"
+        style="border: none;"
+        allowfullscreen>
+      </iframe>
+          <p class="text-center mt-3 small">
+      If the prototype doesn’t load, 
+      <a href="https://www.figma.com/proto/HSRAa23igu9NDwr1mQZaIh/Week-2?t=FgMxe5YK9zvHlQhL-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&node-id=0-1">
+        click here
+      </a> to view it in Figma.
+    </p>
+    </div>
+
+    <!-- Fallback link -->
+    <p style="text-align: center; margin-top: 10px; font-size: 0.95rem;">
+      If the prototype doesn’t load, 
+      <a href="https://www.figma.com/proto/HSRAa23igu9NDwr1mQZaIh/Week-2?node-id=0-1" target="_blank" rel="noopener noreferrer">
+        click here
+      </a> 
+      to view it in Figma. Alternatively, you can view the design 
+      <a href="#compare">below</a> in the "after" section.
+    </p>
   </div>
 </section>
 
 <!-- BEFORE AFTER -->
 <section class="fade-up">
-  <h2>Before vs After</h2>
-  <div class="compare-container" id="Old FutureFunds dashboard">
-    <img src="assets/before.png">
-    <div class="after-img" id="Redesigned FutureFunds dashboard">
-      <img src="assets/after.png">
+  <div class="container">
+    <h2 class="text-center">Before vs After</h2>
+    
+    <!-- Slider instruction -->
+    <p class="text-center mb-4" style="font-size: 1rem; font-weight: 500;">
+      Move the slider to compare the before and after designs
+    </p>
+
+    <!-- Comparison slider -->
+    <div class="compare-container mb-5" id="compare">
+      <!-- BEFORE IMAGE -->
+      <img src="images/horizionrailways/HorizionRailwaysAfter.png" alt="Before" class="before-img">
+
+      <!-- AFTER IMAGE OVERLAY -->
+      <div class="after-img" id="after">
+        <img src="images/horizionrailways/HorizionRailwaysBefore.png" alt="After">
+      </div>
+
+      <!-- SLIDER -->
+      <div class="slider" id="slider"></div>
     </div>
-    <div class="slider" id="slider"></div>
+
+    <!-- Two-column description -->
+    <div class="row">
+      <!-- Left column: Before -->
+      <div class="col-md-6 mb-3">
+        <h4>Before</h4>
+        <p>
+          The original Horizon Railways ticket design was static and difficult to read. Key details such as departure and arrival times, passenger information, seating, and QR codes were not visually prioritized. There were no accessibility indicators or intuitive scanning cues, making quick comprehension a challenge for users.
+        </p>
+      </div>
+
+      <!-- Right column: After / Your Designs -->
+      <div class="col-md-6 mb-3">
+        <h4>After – My 3 Designs</h4>
+        <p>
+          I created three distinct ticket concepts using color-coding and icons to improve usability: 
+          <strong>Blue, Red, and Yellow</strong>. Each ticket includes:
+        </p>
+        <ul>
+          <li>Train image for instant visual recognition</li>
+          <li>Seating map for quick reference</li>
+          <li>WiFi code and scannable QR code for the conductor</li>
+          <li>Passenger names, origin and destination</li>
+          <li>Date, departure time, and arrival time</li>
+        </ul>
+        <p>
+          These designs balance clarity with visual appeal, making it easier for commuters to read critical information at a glance while reinforcing brand identity through color and imagery.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
-
 <!-- METRICS -->
 <section id="results" class="bg-soft fade-up">
   <div class="container">
     <h2>Results & Impact</h2>
     <div class="metrics">
-      <div class="metric-card"><h3>+35%</h3><p>Task Success</p></div>
-      <div class="metric-card"><h3>-20%</h3><p>User Errors</p></div>
-      <div class="metric-card"><h3>4.8★</h3><p>Satisfaction</p></div>
+      <div class="metric-card">
+        <h3>Usability Focus</h3>
+        <p>Enhanced readability and user efficiency through structured wireframes and prototypes</p>
+      </div>
+      <div class="metric-card">
+        <h3>User Research</h3>
+        <p>Conducted commuter surveys and feedback sessions to guide design decisions</p>
+      </div>
+      <div class="metric-card">
+        <h3>Design Iterations</h3>
+        <p>Strengthened visual hierarchy, color coding, and accessibility for faster ticket scanning</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- KEY TAKEAWAYS -->
+<section class="fade-up">
+  <div class="container" style="max-width:900px;">
+    <h2>Key Takeaways</h2>
+
+    <div class="row g-4 mt-2">
+
+      <div class="col-md-4">
+        <div class="metric-card h-100">
+          <h3 style="font-size:1.2rem;">User-First Thinking</h3>
+          <p>
+            Designing tickets with clear information hierarchy and intuitive scanning improves usability for daily and occasional riders alike.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="metric-card h-100">
+          <h3 style="font-size:1.2rem;">Visual Trust Matters</h3>
+          <p>
+          Clean typography, structured spacing, and clear icons build trust and make critical travel information easy to read.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="metric-card h-100">
+          <h3 style="font-size:1.2rem;">Process Drives Results</h3>
+          <p>
+           Following a structured design process from research to prototype ensures tickets are functional, visually appealing, and effective in real-world usage.
+        </div>
+      </div>
+
 <!-- CONTACT -->
-<section id="contact" class="hero fade-up">
+<section id="contact" class="hero fade-up text-center">
   <h2>Let’s Work Together</h2>
-  <a href="mailto:you@example.com" class="glow-btn">Email Me</a>
+
+  <div class="hero-buttons" style="justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+    <!-- Email Me -->
+    <a href="contact.html" class="btn btn-primary glow-btn m-2">Email Me</a>
+    
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/jamieuxdesigns" target="_blank" class="btn btn-primary glow-btn m-2">LinkedIn</a>
+    
+    <!-- Resume link to About page -->
+    <a href="about.html#resume" class="btn btn-primary glow-btn m-2">Resume</a>
+  </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <p>© 2026 Jamie — UX Portfolio</p>
-  <a href="index.html">Back to Portfolio</a>
+<footer class="footer-nav">
+  <div class="section-inner">
+    <img src="images/logo.png" alt="Jamie Logo" class="footer-logo">
+    <div class="footer-buttons">
+      <a href="contact.html" class="footer-link">Email Me</a>
+      
+      <!-- Smart Call Me link -->
+      <a href="tel:+17372909727" 
+         onclick="if(!/Mobi|Android/i.test(navigator.userAgent)){ this.href='contact.html'; }" 
+         class="footer-link">
+        Call Me
+      </a>
+
+      <a href="https://linkedin.com/in/jamieuxdesigns" target="_blank" class="footer-link">LinkedIn</a>
+      <a href="#projects" class="footer-link">View Case Studies</a>
+      <a href="assets/resume.docx" download class="footer-link">Download Resume</a>
+    </div>
+    <medium>Designed with accessibility and clarity in mind.</medium>
+  </div>
 </footer>
 
-<script>
-/* FADE */
-const faders=document.querySelectorAll(".fade-up");
-function show(){const t=window.innerHeight*.9;
-faders.forEach(el=>{if(el.getBoundingClientRect().top<t)el.classList.add("visible");});}
-window.addEventListener("scroll",show);window.addEventListener("DOMContentLoaded",show);
-
-/* PROGRESS BAR */
-window.addEventListener("scroll",()=>{
-  const win=window.scrollY;
-  const h=document.body.scrollHeight-window.innerHeight;
-  document.getElementById("progress").style.width=(win/h)*100+"%";
-});
-
-/* BEFORE/AFTER */
-const slider=document.getElementById("slider");
-const after=document.getElementById("after");
-const container=document.getElementById("compare");
-
-slider.addEventListener("mousedown",()=>window.addEventListener("mousemove",move));
-window.addEventListener("mouseup",()=>window.removeEventListener("mousemove",move));
-
-function move(e){
-  const rect=container.getBoundingClientRect();
-  let x=e.clientX-rect.left;
-  if(x<0)x=0;if(x>rect.width)x=rect.width;
-  after.style.width=x+"px";slider.style.left=x+"px";
-}
-</script>
+<script src="js/horizion.js"></script>
 
 </body>
 </html>
-

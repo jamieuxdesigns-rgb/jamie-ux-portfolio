@@ -1,85 +1,68 @@
-/* ================= GLOBAL ================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
-
-body {
-  background: #f6f5f2;
-  color: #111;
-  scroll-behavior: smooth;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-video {
-  will-change: transform;
-  backface-visibility: hidden;
-}
-
-/* ================= HERO ================= */
-.hero-wrapper {
-  width: 100%;
-  background-color: #0f172a;
-  text-align: center;
-}
-
-.hero-video video {
-  width: 100%;
-  max-height: 450px;
-  object-fit: cover;
-  display: block;
-}
-
-.hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.hero-text h1 {
-  font-size: 2rem;
-  color: #f6f5f2;
-  line-height: 1.3;
-}
-
-.hero-text p {
-  color: #f6f5f2;
-  margin-bottom: 20px;
-}
-
-.hero-buttons {
+.two-column-sections {
   display: flex;
-  justify-content: center;
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
 }
 
-/* ================= SECTIONS ================= */
-.section-inner {
-  max-width: 1200px;
-  margin: 0 auto;
+.section-column {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card {
+  flex: 1 1 calc(50% - 20px);
+  max-width: 280px;
+  background: #f6f5f2;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.section-white {
-  background-color: #f6f5f2;
-  padding: 80px 20px;
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(20,184,166,0.3);
 }
 
-.section-dark {
-  background-color: #2f2f2f;
-  color: #fff;
-  padding: 80px 20px;
+.project-card video {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
 }
 
-/* ================= FLIPBOOK ================= */
+.project-card h3 {
+  font-size: 1.1rem;
+  margin: 10px 0 5px;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.project-link {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #14b8a6;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
 .flipbook-container {
   display: flex;
   align-items: center;
@@ -90,17 +73,18 @@ video {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
-  gap: 30px;
-  width: 100%;
+  gap: 20px;
   padding-bottom: 10px;
+  width: 100%;
 }
 
 .card {
-  min-width: 420px;
-  height: 550px;
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  min-width: 250px;
+  max-width: 280px;
+  height: 350px;
+  background: #f6f5f2;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   overflow: hidden;
   flex-shrink: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -108,7 +92,7 @@ video {
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 25px rgba(250,128,114,0.4);
+  box-shadow: 0 0 25px rgba(20,184,166,0.3);
 }
 
 .card img {
@@ -117,102 +101,140 @@ video {
   object-fit: cover;
 }
 
-.section-dark .card {
-  background: #1e293b;
-  color: #fff;
-}
-
-/* ================= ARROWS ================= */
-.prev,
-.next {
+/* Arrows */
+.prev, .next {
   background: none;
   border: none;
   font-size: 40px;
   cursor: pointer;
-  padding: 20px;
   color: inherit;
   transition: transform 0.3s ease;
 }
 
-.prev:hover,
-.next:hover {
+.prev:hover, .next:hover {
   transform: scale(1.2);
-  color: #fa8072;
+  color: #14b8a6;
 }
 
-/* ================= BUTTONS ================= */
-.btn-primary,
-.glow-btn {
-  background-color: #fa8072;
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  border: none;
-  font-weight: 500;
-  box-shadow: 0 0 15px rgba(250,128,114,0.6);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover,
-.glow-btn:hover {
-  background-color: #f77364;
-  box-shadow: 0 0 25px rgba(250,128,114,0.9);
-  transform: translateY(-2px);
-}
-
-/* ================= FOOTER ================= */
-.footer-nav {
-  background-color: #ffffff;
-  padding: 15px 20px;
-  text-align: center;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
-}
-
-.footer-buttons {
+.flipbook-container {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
 }
 
-.footer-link {
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.footer-link:hover {
-  color: #fa8072;
-}
-
-.footer-logo {
-  max-width: 90px;
-  margin-bottom: 10px;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-  .card {
-    min-width: 300px;
-    height: 400px;
-  }
-
-  .hero-text h1 {
-    font-size: 1.6rem;
-  }
-}
-
-/* Ensure Fancybox links inside cards do not stretch container */
-.flipbook .card a {
-  display: block;
+.flipbook {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
   width: 100%;
-  height: 100%;
+  padding-bottom: 10px;
 }
 
-.flipbook .card a img {
+.card {
+  min-width: 250px;
+  max-width: 280px;
+  height: 350px;
+  background: #f6f5f2;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(20,184,166,0.3);
+}
+
+.card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+}
+
+/* Prev/Next Arrows */
+.prev, .next {
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+  transform: scale(1.2);
+  color: #14b8a6;
+}
+
+/* Two-column layout */
+.two-column-sections {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.section-column {
+  flex: 1 1 500px; /* grows to 500px minimum */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cards row inside each column */
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Project cards */
+.project-card {
+  background: #f6f5f2;
+  border-radius: 12px;
+  padding: 15px;
+  width: 100%;
+  max-width: 480px; /* make larger for videos */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(250,128,114,0.4);
+}
+
+.project-card video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  object-fit: contain; /* ensures full video is visible */
+}
+
+.project-card h3 {
+  margin: 10px 0 5px;
+  font-size: 1.25rem;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-link {
+  color: #14b8a6;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: #fa8072;
 }
