@@ -128,4 +128,25 @@ video {
   section .section-inner video {
     margin: 0 auto;   /* center videos */
   }
+
+  #backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: none; /* hidden by default */
+  background-color: #14b8a6;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 9999;
+  transition: background-color 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: #0fa296;
+}
 }
