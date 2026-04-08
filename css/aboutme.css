@@ -29,11 +29,9 @@
   background-color: #0f172a;
 }
 
-
 .section-bright {
   background-color: #fa8072;
 }
-
 
 .section-light{
   background-color: #f6f5f2;
@@ -84,9 +82,12 @@
   margin-top: 20px; /* space below title */
 }
 
-
 /* ================= IMAGES ================= */
-img { max-width: 100%; height: auto; display: block; }
+img { 
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+}
 
 /* ================= SKILLS ================= */
 .skill-pill {
@@ -114,6 +115,7 @@ img { max-width: 100%; height: auto; display: block; }
   padding-bottom: 60px;
 }
 
+/* ================= VIDEOS ================= */
 /* Make all videos responsive */
 video {
   max-width: 100%;   /* never exceed container width */
@@ -123,13 +125,8 @@ video {
   border-radius: 12px; /* optional: match your resume video style */
 }
 
-/* Optional: Add extra spacing on mobile */
-@media (max-width: 768px) {
-  section .section-inner video {
-    margin: 0 auto;   /* center videos */
-  }
-
-  #backToTop {
+/* ================= BACK TO TOP BUTTON ================= */
+#backToTop {
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -149,4 +146,10 @@ video {
 #backToTop:hover {
   background-color: #0fa296;
 }
+
+/* Optional: Extra mobile spacing for videos */
+@media (max-width: 768px) {
+  section .section-inner video {
+    margin: 0 auto;   /* center videos */
+  }
 }
