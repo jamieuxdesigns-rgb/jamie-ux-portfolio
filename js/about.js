@@ -17,6 +17,23 @@ window.addEventListener('DOMContentLoaded', () => {
         console.log('Autoplay blocked for a video:', error);
         // fallback: show poster image if you want
       });
+      // Back to Top Button
+const backToTopBtn = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) { // show button after scrolling down 300px
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+});
+
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // smooth scroll to top
+  });
+});
     }
   });
 });
