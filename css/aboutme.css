@@ -113,3 +113,19 @@ img { max-width: 100%; height: auto; display: block; }
   padding-top: 60px;
   padding-bottom: 60px;
 }
+
+/* Make all videos responsive */
+video {
+  max-width: 100%;   /* never exceed container width */
+  width: 100%;       /* scale to container width */
+  height: auto;      /* keep aspect ratio */
+  display: block;    /* remove inline spacing issues */
+  border-radius: 12px; /* optional: match your resume video style */
+}
+
+/* Optional: Add extra spacing on mobile */
+@media (max-width: 768px) {
+  section .section-inner video {
+    margin: 0 auto;   /* center videos */
+  }
+}
